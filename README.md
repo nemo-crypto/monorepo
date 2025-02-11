@@ -115,3 +115,15 @@ module.exports = {
   }
 };
 ```
+
+### 6. Prettier 配置
+
+```json:.prettierrc
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "tabWidth": 2
+}
+```
