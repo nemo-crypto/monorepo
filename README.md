@@ -68,3 +68,27 @@ packages:
   }
 }
 ```
+
+### 4. TypeScript 配置
+
+```json:tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@my-monorepo/*": ["packages/*/src"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
+```
