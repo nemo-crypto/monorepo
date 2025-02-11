@@ -157,3 +157,28 @@ my-monorepo/
 ├── .eslintrc.js
 └── .prettierrc
 ```
+
+### 8. 示例包配置
+
+```json:packages/ui/package.json
+{
+  "name": "@my-monorepo/ui",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --watch --dts",
+    "lint": "eslint src/**/*.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "react": "^18.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^6.0.0",
+    "@types/react": "^18.0.0"
+  }
+}
+```
