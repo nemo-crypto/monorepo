@@ -208,3 +208,29 @@ my-monorepo/
   }
 }
 ```
+
+### 10. Git 配置
+
+```gitignore:.gitignore
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build
+dist
+build
+
+# Cache
+.turbo
+.cache
+
+# Logs
+*.log
+
+# Editor
+.vscode
+.idea
+
+# System
+.DS_Store
+```
