@@ -234,3 +234,43 @@ build
 # System
 .DS_Store
 ```
+
+### 11. CI/CD 配置
+
+```yaml:.github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+          
+      - name: Install dependencies
+        run: pnpm install
+        
+      - name: Lint
+        run: pnpm lint
+        
+      - name: Build
+        run: pnpm build
+        
+      - name: Test
+        run: pnpm test
+```
