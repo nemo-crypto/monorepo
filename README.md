@@ -274,3 +274,29 @@ jobs:
       - name: Test
         run: pnpm test
 ```
+
+
+### 12. 常用命令
+
+```bash
+# 安装依赖
+pnpm install
+
+# 添加依赖到特定包
+pnpm add <package> --filter @my-monorepo/web
+
+# 开发模式
+pnpm dev
+
+# 构建所有包
+pnpm build
+
+# 清理构建文件
+pnpm clean
+
+# 运行测试
+pnpm test
+
+# 代码检查
+pnpm lint
+```
