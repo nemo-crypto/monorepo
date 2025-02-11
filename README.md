@@ -182,3 +182,29 @@ my-monorepo/
   }
 }
 ```
+
+### 9. 示例应用配置
+
+```json:apps/web/package.json
+{
+  "name": "@my-monorepo/web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@my-monorepo/ui": "workspace:*",
+    "@my-monorepo/utils": "workspace:*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.0.0",
+    "vite": "^4.0.0"
+  }
+}
+```
