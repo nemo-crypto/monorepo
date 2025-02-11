@@ -1,2 +1,2 @@
-# monorepo
-share code and resources across projects
+# monorepo 0-1搭建
+
