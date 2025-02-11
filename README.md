@@ -14,3 +14,29 @@ pnpm init
 pnpm add -D typescript @types/node turbo prettier eslint
 ```
 
+
+### 2. 基础配置文件
+
+```json:package.json
+{
+  "name": "my-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
+```
+
+```json:pnpm-workspace.yaml
+packages:
+  - 'apps/*'
+  - 'packages/*'
+```
