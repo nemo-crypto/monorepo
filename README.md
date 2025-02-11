@@ -92,3 +92,26 @@ packages:
   "exclude": ["node_modules"]
 }
 ```
+
+### 5. ESLint 配置
+
+```javascript:.eslintrc.js
+module.exports = {
+  root: true,
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  env: {
+    node: true,
+    browser: true,
+    es2021: true
+  },
+  rules: {
+    // 自定义规则
+  }
+};
+```
