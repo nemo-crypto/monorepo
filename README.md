@@ -40,3 +40,31 @@ packages:
   - 'apps/*'
   - 'packages/*'
 ```
+
+### 3. Turborepo 配置
+
+```json:turbo.json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
+```
