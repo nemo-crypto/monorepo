@@ -127,3 +127,33 @@ module.exports = {
   "tabWidth": 2
 }
 ```
+
+### 7. 项目结构
+
+```bash
+my-monorepo/
+├── apps/                    # 应用目录
+│   ├── web/                # Web 应用
+│   │   ├── package.json
+│   │   ├── src/
+│   │   └── tsconfig.json
+│   └── admin/              # 管理后台
+│       ├── package.json
+│       ├── src/
+│       └── tsconfig.json
+├── packages/               # 公共包目录
+│   ├── ui/                # UI 组件库
+│   │   ├── package.json
+│   │   ├── src/
+│   │   └── tsconfig.json
+│   └── utils/             # 工具库
+│       ├── package.json
+│       ├── src/
+│       └── tsconfig.json
+├── package.json
+├── pnpm-workspace.yaml
+├── turbo.json
+├── tsconfig.json
+├── .eslintrc.js
+└── .prettierrc
+```
