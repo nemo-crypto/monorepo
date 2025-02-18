@@ -128,7 +128,7 @@ module.exports = {
 }
 ```
 
-### 7. 项目结构
+### 7. 项目结构图
 
 ```bash
 my-monorepo/
