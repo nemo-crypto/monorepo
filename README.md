@@ -183,7 +183,7 @@ my-monorepo/
 }
 ```
 
-### 9. 示例应用配置
+### 9. 示例应用配置Demo
 
 ```json:apps/web/package.json
 {
