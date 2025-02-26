@@ -133,7 +133,7 @@ module.exports = {
 ```bash
 my-monorepo/
 ├── apps/                    # 应用目录
-│   ├── web/                # Web 应用
+│   ├── web/                # Web应用
 │   │   ├── package.json
 │   │   ├── src/
 │   │   └── tsconfig.json
@@ -142,7 +142,7 @@ my-monorepo/
 │       ├── src/
 │       └── tsconfig.json
 ├── packages/               # 公共包目录
-│   ├── ui/                # UI 组件库
+│   ├── ui/                # UI组件库
 │   │   ├── package.json
 │   │   ├── src/
 │   │   └── tsconfig.json
