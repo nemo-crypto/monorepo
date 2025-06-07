@@ -1,0 +1,42 @@
+
+.create-iui-simple-pagination(
+@T1: '';
+@T2: '';
+@B1: '';
+@F1: '';
+@Bg1: ''; 
+) {
+.iui-simple-pagination {
+  margin: 0 16px 24px;
+  .pagination-item {
+    min-width: 22px;
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+    color: @T1;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: @F1;
+    }
+
+    &.disabled {
+      color: @T2;
+      cursor: not-allowed;
+
+      &:hover {
+        border-color: @Bg1;
+      }
+    }
+
+    &.active {
+      background: @B1;
+      .typo {
+        line-height: 1.8;
+      }
+    }
+  }
+}
+}

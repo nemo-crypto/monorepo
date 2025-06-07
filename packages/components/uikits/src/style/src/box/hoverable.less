@@ -1,0 +1,28 @@
+.hoverable {
+  .hover-visible {
+    display: none !important;
+  }
+  .hover-visible-inline {
+      display: none !important;
+  }
+  .hover-hidden {
+    display: block !important;
+  }
+  .hover-hidden-inline {
+    display: inline-block !important;
+  }
+
+  
+  &:hover {
+    .hover-visible {
+      display: block !important;
+    }
+    
+    .hover-visible-inline {
+      display: inline-block !important;
+    }
+    .hover-hidden {
+      display: none !important;
+    }
+  }
+}

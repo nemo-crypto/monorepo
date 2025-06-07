@@ -1,0 +1,163 @@
+.create-iui-table(
+  @Bg1: '';
+  @T1: '';
+  @T2: '';
+  @T3: '';
+  @C4: '';
+) {
+  .ant-table-wrapper {
+    &.iui-table {
+      padding-bottom: 24px;
+      .ant-table-thead>tr>th {
+        padding: 16px 15px 16px 0;
+        white-space: nowrap;
+  
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      .ant-table-fixed-header>.ant-table-content>.ant-table-scroll>.ant-table-body {
+        background: transparent !important;
+        margin-top: 16px;
+      }
+
+      // antd 3.24.0升级删除此样式引发布局问题 在此修复
+      .ant-table-scroll table {
+        width: auto;
+      }
+
+      // 右侧固定相关
+      .ant-table-scroll-position-right {
+        .ant-table-fixed-right {
+          table {
+            background: transparent !important;
+          }
+        }
+      }
+
+      // 右侧固定相关
+      .ant-table-fixed-right {
+        table {
+          background: @Bg1 !important;
+          .ant-table-row {
+            height: auto;
+          }
+          .ant-table-tbody>tr>td {
+            padding-right: 24px;
+            div.d-flex {
+              justify-content: flex-end;
+            }
+          }
+        }
+
+        .ant-table-tbody>tr:hover {
+          background: transparent !important;
+        }
+
+        .ant-table-tbody>tr>td {
+          padding-left: 10px !important;
+          border-bottom: 1px solid transparent !important;
+        }
+
+        .ant-table-thead>tr>th {
+          padding-left: 10px !important;
+        }
+      }
+
+      //右侧action固定 投影（非空数据状态 + 无滚动条状态）
+      .ant-table.ant-table-default:not(.ant-table-empty):not(.ant-table-scroll-position-right) {
+        .ant-table-fixed-right {
+          box-shadow: -6px 0 6px -4px @C4;
+        }
+      }
+
+      .ant-table-fixed {
+        .ant-table-tbody>tr>td {
+          &:last-child {
+            padding-right: 24px;
+          }
+        }
+      }
+
+      .ant-table-thead>tr>th {
+        font-weight: normal;
+        color: @T2;
+        font-size: 12px;
+        padding: 16px 24px 16px;
+        white-space: nowrap !important;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child {
+          padding-right: 24px;
+          text-align: right;
+        }
+      }
+
+      .ant-table-tbody>tr {
+        &:hover {
+          background: fade(@T1, 3%) !important;
+        }
+      }
+
+      .ant-table-tbody>tr>td {
+        .ant-row-flex.ant-row-flex-end {
+          padding-right: 24px;
+        }
+      }
+
+
+      .ant-table-fixed-columns-in-body {
+        visibility: visible;
+        color: transparent;
+
+        * {
+          color: transparent;
+          visibility: hidden;
+        }
+      }
+
+      .ant-table-tbody>tr>td {
+        color: @T1;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 16px 24px;
+        height: 46px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child {
+          padding-right: 0px;
+          text-align: right;
+        }
+
+      }
+
+      &.no-border {
+        .ant-table-tbody>tr>td {
+          border-bottom: 1px solid transparent;
+        }
+      }
+
+      .ant-table-placeholder {
+        background: transparent;
+
+        .ant-empty-description {
+          color: @T3;
+        }
+      }
+
+      .ant-spin-blur {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.typo {
+  line-height: 1.2;
+
+  &.typo-paragraph {
+    line-height: 1.5;
+  }
+}
+
+.text-type(@type: 1; @size: 12px; @color: '';@hover:@color; @bold: normal) {
+  .typo-text-@{type} {
+    font-size: @size ;
+    // font-weight: @bold;
+    color: @color;
+    &.cursor-pointer:hover{
+      color: @hover;
+    }
+    &.fc-inherit {
+      color: inherit;
+    }
+
+    &.typo-disabled {
+      color: fade(@color, 35%) !important;
+      cursor: not-allowed;
+    }
+    // 待移除
+    &.kit-1 {
+      border-left: 3px solid @brand-primary;
+      padding-left: 5px;
+    }
+  }
+}
+
+.create-text-types() {
+
+  .text-type(@type: ~"1"; @size: @fs-text1; @color: @fc-grey; );
+  .text-type(@type: ~"1-light"; @size: @fs-text1; @color: @fc-grey-light; );
+  .text-type(@type: ~"1-lighter"; @size: @fs-text1; @color: @fc-grey-lighter; );
+  .text-type(@type: ~"1-lightest"; @size: @fs-text1; @color: @fc-grey-lightest; );
+  .text-type(@type: ~"1-primary"; @size: @fs-text1; @color: @brand-primary; );
+  .text-type(@type: ~"1-success"; @size: @fs-text1; @color: @brand-success; );
+  .text-type(@type: ~"1-up"; @size: @fs-text1; @color: @brand-up; );
+  .text-type(@type: ~"1-down"; @size: @fs-text1; @color: @brand-down; );
+  .text-type(@type: ~"1-error"; @size: @fs-text1; @color: @brand-error; );
+  .text-type(@type: ~"1-warn"; @size: @fs-text1; @color: @brand-warn; );
+  .text-type(@type: ~"1-info"; @size: @fs-text1; @color: @brand-info; );
+  .text-type(@type: ~"1-icon"; @size: @fs-text1; @color: @fc-icon; );
+
+  .text-type(@type: ~"2"; @size: @fs-text2; @color: @fc-grey; );
+  .text-type(@type: ~"2-light"; @size: @fs-text2; @color: @fc-grey-light; );
+  .text-type(@type: ~"2-lighter"; @size: @fs-text2; @color: @fc-grey-lighter; );
+  .text-type(@type: ~"2-lightest"; @size: @fs-text2; @color: @fc-grey-lightest; );
+  .text-type(@type: ~"2-primary"; @size: @fs-text2; @color: @brand-primary; );
+  .text-type(@type: ~"2-up"; @size: @fs-text2; @color: @brand-up; );
+  .text-type(@type: ~"2-down"; @size: @fs-text2; @color: @brand-down; );
+  .text-type(@type: ~"2-success"; @size: @fs-text2; @color: @brand-success; );
+  .text-type(@type: ~"2-error"; @size: @fs-text2; @color: @brand-error; );
+  .text-type(@type: ~"2-warn"; @size: @fs-text2; @color: @brand-warn; );
+  .text-type(@type: ~"2-info"; @size: @fs-text2; @color: @brand-info; );
+  .text-type(@type: ~"2-icon"; @size: @fs-text1; @color: @fc-icon; );
+
+}

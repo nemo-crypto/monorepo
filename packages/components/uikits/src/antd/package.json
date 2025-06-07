@@ -1,0 +1,11 @@
+{
+  "name": "@xatom/antd",
+  "version": "1.0.0",
+  "description": "",
+  "author": "https://github.com/nemo-crypto",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ]
+}

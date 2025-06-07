@@ -1,0 +1,65 @@
+/**
+ * 默认大小 .iui-scrollbar-default
+ * 最大尺寸 .iui-scrollbar-large
+ */
+.create-iui-scrollbar(
+  @T1: '';
+) {
+  .iui-scrollbar {
+    &::-webkit-scrollbar-corner {
+      background-color: transparent !important;
+    }
+
+    &-default {
+      &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 8px;
+        height: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: fade(@T1, 10%) !important;
+        border: 2px solid transparent;
+        border-radius: 8px;
+
+        &:active,
+        &:hover {
+          background-color: fade(@T1, 40%) !important;
+          cursor: default !important;
+        }
+      }
+    }
+
+    &-large {
+      &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 16px;
+        height: 16px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: fade(@T1, 10%) !important;
+        border: 4px solid transparent;
+        border-radius: 16px;
+
+        &:active,
+        &:hover {
+          background-color: fade(@T1, 40%) !important;
+          cursor: default !important;
+        }
+      }
+
+      &::-webkit-scrollbar-corner {
+        background-color: transparent !important;
+      }
+    }
+
+    &-none {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

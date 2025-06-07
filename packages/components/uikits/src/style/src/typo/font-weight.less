@@ -1,0 +1,18 @@
+.fw-type(@type: ''; @weight: ''; ) {
+  .fw-@{type} {
+    font-weight: @weight  !important;
+  }
+
+  .hover-fw-@{type}:hover {
+    font-weight: @weight  !important;
+  }
+
+  .active-fw-@{type}.active {
+    font-weight: @weight  !important;
+  }
+}
+
+.fw-type(@type: ~"light"; @weight: 300; );
+.fw-type(@type: ~"normal"; @weight: 400; );
+.fw-type(@type: ~"bold"; @weight: 500; );
+.fw-type(@type: ~"bolder"; @weight: 600; );

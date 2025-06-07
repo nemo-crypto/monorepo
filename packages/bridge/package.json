@@ -1,0 +1,14 @@
+{
+  "name": "@xatom/bridge",
+  "version": "2.0.11-beta.1",
+  "description": "",
+  "author": "https://github.com/nemo-crypto",
+  "license": "ISC",
+  "main": "lib/bridge.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://github.com/nemo-crypto/monorepo"
+  }
+}

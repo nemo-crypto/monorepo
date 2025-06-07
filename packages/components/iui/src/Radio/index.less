@@ -1,0 +1,59 @@
+.create-iui-radio(@T2: '';
+  @Bg4: '';
+  @Bg5: '';
+  @F1: '';
+
+) {
+  .iui-radio {
+    font-size: 12px;
+
+    .ant-radio {
+      font-size: 12px;
+
+      &-input,
+      &-inner {
+        width: 12px;
+        height: 12px;
+      }
+
+      &-inner {
+        background-color: @Bg4;
+        border: 1px solid @T2;
+
+        &::after {
+          width: 6px;
+          height: 6px;
+          top: 2px;
+          left: 2px;
+          background-color: @F1;
+          opacity: 0;
+        }
+      }
+
+      &+span {
+        padding: 0 0 0 8px !important;
+      }
+
+      &:hover .ant-radio-inner {
+        border-color: @F1;
+      }
+
+      &-checked .ant-radio-inner {
+        border-color: @F1 !important;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &-disabled .ant-radio-inner {
+        border-color: @T2 !important;
+        background-color: @Bg5 !important;
+
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.ui-simple-pagination {
+  margin-top: 30px;
+
+  &-item {
+    width: 28px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #898989;
+    font-size: 14px;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+    &.disabled {
+      color: #c1c1c1;
+      cursor: not-allowed;
+    }
+    &:hover {
+      color: #3169ff;
+      border-color: #3169ff;
+    }
+    &.disabled:hover {
+      color: #c1c1c1;
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "independent",
+  "packages": [
+    "third-party-libs/*",
+    "states/*",
+    "modules/*",
+    "ui/*"
+  ]
+}

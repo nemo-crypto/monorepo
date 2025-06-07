@@ -1,0 +1,10 @@
+{
+  "name": "@xatom/abtest",
+  "version": "0.0.2-beta.1",
+  "description": "To test the data of the current system.",
+  "license": "ISC",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://github.com/nemo-crypto/monorepo"
+  }
+}

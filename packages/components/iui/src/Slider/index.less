@@ -1,0 +1,105 @@
+.create-iui-slider(
+  @Bg1: '';
+  @C1: '';
+  @C3: '';
+  @T2: '';
+) {
+  .iui-slider {
+    .ant-slider {
+      margin: 0 6px !important;
+      padding: 6px 0 !important;
+      height: 14px;
+
+      &.ant-slider-with-marks {
+        height: 32px;
+      }
+
+      .ant-slider-rail,
+      .ant-slider-track,
+      .ant-slider-step {
+        height: 2px !important;
+      }
+
+      .ant-slider-step {
+        top: 6px !important;
+      }
+
+      .ant-slider-mark {
+        line-height: 14px;
+
+        &-text {
+          font-size: 12px !important;
+          color: @T2 !important;
+
+          &:first-child {
+            transform: translateX(-6px) !important;
+          }
+
+          &:last-child {
+            left: auto !important;
+            right: 0;
+            transform: translateX(8px) !important;
+          }
+        }
+      }
+
+      .ant-slider-handle {
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        margin-top: -7px;
+        background: @C3 !important;
+        border-color: @Bg1 !important;
+        box-shadow: none;
+      }
+
+      .ant-slider-dot {
+        background: @Bg1 !important;
+        border-color: @C1 !important;
+        top: -3px;
+        
+        &:first-child {
+          margin-left: -6px;
+        }
+        
+        &:last-child {
+          margin-left: -2px;
+        }
+      }
+
+      .ant-slider-dot-active {
+        background: @C3 !important;
+        border-color: @C3 !important;
+      }
+
+      .ant-slider-track {
+        background: @C3;
+      }
+
+      .ant-slider-rail {
+        background: @C1 !important;
+      }
+    }
+
+    .ant-tooltip {
+      &-inner {
+        background: @C3 !important;
+        color: #000000 !important;
+        border-radius: 2px !important;
+        padding: 4px !important;
+        line-height: 14px;
+        min-width: 12px;
+        min-height: 14px;
+      }
+
+      &-arrow {
+        border-right-color: @C3 !important;
+        border-bottom-color: @C3 !important;
+
+        &::before {
+          background: @C3 !important;
+        }
+      }
+    }
+  }
+}

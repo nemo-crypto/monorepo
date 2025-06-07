@@ -1,0 +1,72 @@
+.create-iui-modal(@Bg4: '';
+  @L1: '';
+  @T1: '';
+  @T2: '';
+
+) {
+  .iui-modal {
+    .ant-modal {
+      padding-bottom: 0;
+      border-radius: 12px;
+      background: @Bg4 !important;
+      border: 1px solid @L1;
+      box-shadow: none;
+      box-sizing: content-box;
+
+      &-content {
+        border-radius: 0;
+        background: transparent !important;
+        border: none;
+        padding: 24px;
+        max-height: calc(100vh - 48px);
+        box-shadow: none;
+      }
+
+      &-body {
+        display: flex;
+        flex-direction: column;
+        padding: 0 !important;
+        background: transparent !important;
+        max-height: calc(100vh - 96px);
+      }
+
+      &-close {
+        top: 24px;
+        right: 24px;
+
+        &-x {
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &-close {
+      font-size: 24px !important;
+      color: @T2;
+
+      &:hover {
+        color: @T1;
+      }
+    }
+
+    &-body {
+      flex: 1;
+      min-height: 24px;
+      // margin: 0 -24px;
+      // padding: 0 16px 0 24px;
+    }
+    
+    &-scrollbar-auto {
+      overflow: auto;
+    }
+    
+    &-scrollbar-scroll {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      margin: 0 -24px;
+      padding: 0 16px 0 24px;
+    }
+  }
+}

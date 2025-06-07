@@ -1,0 +1,151 @@
+.create-iui-footer-h5(
+  @Bg1: '';
+  @Bg2: '';
+  @T2: '';
+  @T1: '';
+  @C3: '';
+  @F1: '';
+  @L2: '';
+) {
+  .iui-footer-h5 {
+    position: relative;
+    z-index: 100;
+    background: @Bg1;
+
+    &-wrap {
+      padding: 8px 24px 32px;
+    }
+
+    &-links {
+      padding-bottom: 24px;
+
+      &-col {
+        &-title {
+          position: relative;
+          font-size: 16px;
+          height: 50px;
+          line-height: 50px;
+          cursor: pointer;
+          font-weight: 500;
+          color: @T1;
+
+          &-expand {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 18px !important;
+            transition: all 300ms;
+          }
+        }
+
+        &-item {
+          &:not(:last-child) {
+            margin-bottom: 16px;
+          }
+
+          &-label {
+            font-size: 12px;
+            line-height: 14px;
+            color: @T2;
+            margin-bottom: 4px;
+          }
+
+          &-value {
+            font-size: 14px;
+            line-height: 17px;
+            color: @C3;
+
+            &:hover {
+              color: @C3;
+              text-decoration: underline;
+            }
+          }
+
+          &-link {
+            font-size: 14px;
+            line-height: 17px;
+            color: @T2;
+
+            &:hover {
+              color: @T1;
+            }
+          }
+        }
+
+        &-main {
+          display: none;
+          padding: 4px 0;
+        }
+
+        &.is-active .iui-footer-h5-links-col-title-expand {
+          transform: rotate(180deg);
+        }
+
+        &.is-active .iui-footer-h5-links-col-main {
+          display: block;
+        }
+      }
+    }
+
+    &-follow {
+      margin-bottom: 32px;
+
+      &-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: @T1;
+        line-height: 18px;
+        margin-right: 24px;
+        margin-bottom: 24px;
+      }
+
+      &-main {
+        display: block;
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        &-item {
+          width: 24px;
+          height: 24px;
+          font-size: 24px !important;
+          color: @T1;
+          cursor: pointer;
+          border-radius: 50%;
+          overflow: hidden;
+          background: @Bg2;
+
+          &:hover {
+            color: @F1;
+          }
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+        }
+      }
+
+      &-thirdparty {
+        display: flex;
+
+        &-item {
+          &:not(:last-child) {
+            margin-right: 24px;
+          }
+        }
+      }
+    }
+
+    &-copyright {
+      padding-top: 24px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 16px;
+      color: @T2;
+      border-top: 1px solid @L2;
+    }
+  }
+}

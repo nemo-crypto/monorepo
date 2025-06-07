@@ -1,0 +1,199 @@
+// Spin
+.chart-spin .ant-spin-blur {
+  opacity: 0;
+}
+.chart-spin .ant-spin-container {
+  height: 100%;
+}
+
+// 右侧订单线、仓位线筛选项
+.lineFilterContent {
+  .ant-popover-arrow {
+    display: none;
+  }
+
+  .ant-popover-inner {
+    background-color: #2B2D33;
+  }
+
+  .ant-popover-inner-content {
+    padding: 16px;
+    max-width: 360px;
+    min-width: 180px;
+  }
+}
+
+// kline-header
+.kline-header {
+  height: 40px;
+  border-bottom: 1px solid #202125;
+  align-items: center;
+  padding: 0 16px 0 16px;
+  overflow-x: scroll;
+
+  .kline-header-settings {
+    align-items: center;
+  }
+
+  .sh-4-diy > * {
+    margin-right: 24px;
+  }
+
+  .filter-right {
+    display: flex;
+    align-items: center;
+
+    .iui-icon-sliders {
+      margin-right: 19px;
+    }
+    
+  }
+}
+/* 自定义横向滚动条的样式 */
+.kline-header::-webkit-scrollbar {
+  width: 3px; 
+  height: 3px;
+}
+
+/* 滚动条的滑块 */
+.kline-header::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 14px;
+}
+ 
+
+#tv_charts {
+  .trendingview_watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%);
+    opacity: .1;
+    pointer-events: none;
+    color: #fff;
+    font-size: 60px;
+  }
+}
+
+#tv_charts.watermark_minWidth {
+  .trendingview_watermark {
+    font-size: 45px;
+  }
+}
+
+#tv_charts.watermark_minHeight {
+  .trendingview_watermark {
+    display: none;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .kline-header {
+    .sh-4-diy > * {
+      margin-right: 18px;
+    }
+
+    .filter-right {
+      display: flex;
+      align-items: center;
+  
+      .iui-icon-sliders {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .tv_charts_fullscreen {
+    z-index: 2000 !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  #tv_charts {
+    .trendingview_watermark {
+      font-size: 32px;
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .kline-header {
+    .sh-4-diy > * {
+      margin-right: 12px;
+    }
+
+    .iui-icon-sliders {
+      margin-right: 12px;
+    }
+  }
+
+}
+
+.timefilteroverlay {
+  .ant-popover-arrow {
+    display: none;
+  }
+
+  .ant-popover-inner {
+    background-color: #2B2D33;
+  }
+
+  .ant-popover-inner-content {
+    padding: 0;
+    width: 360px;
+    height: 169px;
+  }
+
+  .title {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .select-intervals-field {
+    width: 80px;
+    margin-bottom: 16px;
+    font-size: 12px;
+
+    .ant-checkbox-wrapper {
+      font-size: 12px!important;
+    }
+  }
+}
+
+.kline-chart-type-layer {
+  .ant-popover-arrow {
+    display: none;
+  }
+
+  .ant-popover-inner-content {
+    padding: 0;
+  }
+
+  .kline-chart-type-item {
+    line-height: 22px;
+    font-size: 14px;
+    padding: 5px 12px;
+    cursor: pointer;
+    &.is-active, &:hover {
+      background: #3a3b43;
+    }
+  }
+}
+
+// 日夜间主题相关
+.theme-test-light  {
+  .kline-chart-type-layer {
+    .kline-chart-type-item {
+      &.is-active, &:hover {
+        background: #F3F4F6;
+      }
+    }
+  }
+}

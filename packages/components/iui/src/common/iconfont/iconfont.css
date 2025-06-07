@@ -1,0 +1,463 @@
+@font-face {
+  font-family: "iui-icon"; /* Project id 4515887 */
+  src: url('iconfont.woff2?t=1741598484043') format('woff2'),
+       url('iconfont.woff?t=1741598484043') format('woff'),
+       url('iconfont.ttf?t=1741598484043') format('truetype');
+}
+
+.iui-icon {
+  font-family: "iui-icon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iui-icon-coupon:before {
+  content: "\e6ab";
+}
+
+.iui-icon-error:before {
+  content: "\e6a9";
+}
+
+.iui-icon-right:before {
+  content: "\e6aa";
+}
+
+.iui-icon-pc-online:before {
+  content: "\e6a8";
+}
+
+.iui-icon-app-online:before {
+  content: "\e6a5";
+}
+
+.iui-icon-pc:before {
+  content: "\e6a6";
+}
+
+.iui-icon-app:before {
+  content: "\e6a7";
+}
+
+.iui-icon-close:before {
+  content: "\e6a4";
+}
+
+.iui-icon-share-grid:before {
+  content: "\e6a3";
+}
+
+.iui-icon-sun:before {
+  content: "\e69d";
+}
+
+.iui-icon-moon:before {
+  content: "\e69e";
+}
+
+.iui-icon-coupon-position-tip:before {
+  content: "\e69c";
+}
+
+.iui-icon-profit:before {
+  content: "\e69b";
+}
+
+.iui-icon-circle-up:before {
+  content: "\e69f";
+}
+
+.iui-icon-circle-down:before {
+  content: "\e6a2";
+}
+
+.iui-icon-fees:before {
+  content: "\e6a0";
+}
+
+.iui-icon-arrow-right:before {
+  content: "\e6a1";
+}
+
+.iui-icon-input-check:before {
+  content: "\e69a";
+}
+
+.iui-icon-rss:before {
+  content: "\e699";
+}
+
+.iui-icon-clear:before {
+  content: "\e697";
+}
+
+.iui-icon-delete:before {
+  content: "\e698";
+}
+
+.iui-icon-update:before {
+  content: "\e695";
+}
+
+.iui-icon-add:before {
+  content: "\e696";
+}
+
+.iui-icon-exchange:before {
+  content: "\e693";
+}
+
+.iui-icon-drag-option:before {
+  content: "\e694";
+}
+
+.iui-icon-reset:before {
+  content: "\e689";
+}
+
+.iui-icon-resize:before {
+  content: "\e691";
+}
+
+.iui-icon-drag:before {
+  content: "\e692";
+}
+
+.iui-icon-medium:before {
+  content: "\e752";
+}
+
+.iui-icon-reddit:before {
+  content: "\e67e";
+}
+
+.iui-icon-kakao:before {
+  content: "\e68a";
+}
+
+.iui-icon-youtube:before {
+  content: "\e68b";
+}
+
+.iui-icon-telegram:before {
+  content: "\e68c";
+}
+
+.iui-icon-instagram:before {
+  content: "\e68d";
+}
+
+.iui-icon-linkedin:before {
+  content: "\e68e";
+}
+
+.iui-icon-twitter:before {
+  content: "\e68f";
+}
+
+.iui-icon-facebook:before {
+  content: "\e690";
+}
+
+.iui-icon-globe:before {
+  content: "\e67a";
+}
+
+.iui-icon-bank-note:before {
+  content: "\e664";
+}
+
+.iui-icon-attachment:before {
+  content: "\e66b";
+}
+
+.iui-icon-announcement:before {
+  content: "\e66c";
+}
+
+.iui-icon-p2p:before {
+  content: "\e66d";
+}
+
+.iui-icon-down:before {
+  content: "\e670";
+}
+
+.iui-icon-shield:before {
+  content: "\e671";
+}
+
+.iui-icon-demo:before {
+  content: "\e672";
+}
+
+.iui-icon-attachment2:before {
+  content: "\e673";
+}
+
+.iui-icon-passport:before {
+  content: "\e674";
+}
+
+.iui-icon-users-plus:before {
+  content: "\e675";
+}
+
+.iui-icon-notification:before {
+  content: "\e676";
+}
+
+.iui-icon-attachment3:before {
+  content: "\e677";
+}
+
+.iui-icon-earn:before {
+  content: "\e678";
+}
+
+.iui-icon-refresh:before {
+  content: "\e679";
+}
+
+.iui-icon-chart2:before {
+  content: "\e67b";
+}
+
+.iui-icon-history:before {
+  content: "\e67c";
+}
+
+.iui-icon-users:before {
+  content: "\e67d";
+}
+
+.iui-icon-up:before {
+  content: "\e67f";
+}
+
+.iui-icon-api:before {
+  content: "\e680";
+}
+
+.iui-icon-chart3:before {
+  content: "\e681";
+}
+
+.iui-icon-chart4:before {
+  content: "\e682";
+}
+
+.iui-icon-wallet2:before {
+  content: "\e683";
+}
+
+.iui-icon-copytrade:before {
+  content: "\e684";
+}
+
+.iui-icon-graduation:before {
+  content: "\e685";
+}
+
+.iui-icon-credit-card:before {
+  content: "\e686";
+}
+
+.iui-icon-spot:before {
+  content: "\e687";
+}
+
+.iui-icon-clipboard:before {
+  content: "\e688";
+}
+
+.iui-icon-switch2:before {
+  content: "\e66a";
+}
+
+.iui-icon-link2:before {
+  content: "\e669";
+}
+
+.iui-icon-dots-vertical:before {
+  content: "\e661";
+}
+
+.iui-icon-airdrop:before {
+  content: "\e655";
+}
+
+.iui-icon-gift:before {
+  content: "\e666";
+}
+
+.iui-icon-sale:before {
+  content: "\e665";
+}
+
+.iui-icon-coins-swap:before {
+  content: "\e662";
+}
+
+.iui-icon-search:before {
+  content: "\e660";
+}
+
+.iui-icon-menus:before {
+  content: "\e65f";
+}
+
+.iui-icon-filter:before {
+  content: "\e65e";
+}
+
+.iui-icon-deposit-grid:before {
+  content: "\e646";
+}
+
+.iui-icon-chevron-right:before {
+  content: "\e65c";
+}
+
+.iui-icon-chevron-left:before {
+  content: "\e65d";
+}
+
+.iui-icon-settings:before {
+  content: "\e644";
+}
+
+.iui-icon-copy:before {
+  content: "\e63d";
+}
+
+.iui-icon-eye-off:before {
+  content: "\e63f";
+}
+
+.iui-icon-vip:before {
+  content: "\e751";
+}
+
+.iui-icon-temp:before {
+  content: "\e636";
+}
+
+.iui-icon-hot:before {
+  content: "\e750";
+}
+
+.iui-icon-link:before {
+  content: "\e635";
+}
+
+.iui-icon-chart:before {
+  content: "\e659";
+}
+
+.iui-icon-contract2:before {
+  content: "\e658";
+}
+
+.iui-icon-eye:before {
+  content: "\e654";
+}
+
+.iui-icon-wallet:before {
+  content: "\e656";
+}
+
+.iui-icon-google-play:before {
+  content: "\e650";
+}
+
+.iui-icon-android:before {
+  content: "\e651";
+}
+
+.iui-icon-ios:before {
+  content: "\e652";
+}
+
+.iui-icon-contract:before {
+  content: "\e641";
+}
+
+.iui-icon-logout:before {
+  content: "\e642";
+}
+
+.iui-icon-earn2:before {
+  content: "\e649";
+}
+
+.iui-icon-arrow-up:before {
+  content: "\e612";
+}
+
+.iui-icon-chevron-up:before {
+  content: "\e625";
+}
+
+.iui-icon-arrow-down:before {
+  content: "\e626";
+}
+
+.iui-icon-book:before {
+  content: "\e624";
+}
+
+.iui-icon-candle:before {
+  content: "\e622";
+}
+
+.iui-icon-plus-square:before {
+  content: "\e61e";
+}
+
+.iui-icon-sliders:before {
+  content: "\e61f";
+}
+
+.iui-icon-switch:before {
+  content: "\e621";
+}
+
+.iui-icon-expand:before {
+  content: "\e613";
+}
+
+.iui-icon-calculator:before {
+  content: "\e614";
+}
+
+.iui-icon-alert-circle:before {
+  content: "\e615";
+}
+
+.iui-icon-download:before {
+  content: "\e616";
+}
+
+.iui-icon-chevron-down:before {
+  content: "\e618";
+}
+
+.iui-icon-bell:before {
+  content: "\e619";
+}
+
+.iui-icon-edit:before {
+  content: "\e61b";
+}
+
+.iui-icon-share:before {
+  content: "\e61c";
+}
+
+.iui-icon-shrink:before {
+  content: "\e61d";
+}
+

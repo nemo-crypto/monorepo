@@ -1,0 +1,22 @@
+{
+  "name": "@xatom/tradingview",
+  "version": "1.0.21",
+  "description": "tradingview",
+  "keywords": [
+    "tradingview"
+  ],
+  "author": "https://github.com/nemo-crypto",
+  "homepage": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://github.com/nemo-crypto/monorepo"
+  },
+  "dependencies": {
+    "lodash": "4.17.21",
+    "moment-timezone": "0.5.43"
+  }
+}

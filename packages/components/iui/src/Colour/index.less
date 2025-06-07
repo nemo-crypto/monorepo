@@ -1,0 +1,125 @@
+.create-iui-colour(
+  @Bg1: @Bg1;
+  @Bg2: @Bg2;
+  @Bg3: @Bg3;
+  @Bg4: @Bg4;
+  @Bg5: @Bg5;
+  
+  @T1: @T1;
+  @T2: @T2;
+  @T3: @T3;
+  
+  @B1: @B1;
+  @B2: @B2;
+  
+  @F1: @F1;
+  @F2: @F2;
+  @F3: @F3;
+  @F4: @F4;
+  
+  @L1: @L1;
+  @L2: @L2;
+  
+  @C1: @C1;
+  @C2: @C2;
+  @C3: @C3;
+  @C4: @C4;
+) {
+  .create-colour(~'bg1', @Bg1);
+  .create-colour(~'bg2', @Bg2);
+  .create-colour(~'bg3', @Bg3);
+  .create-colour(~'bg4', @Bg4);
+  .create-colour(~'bg5', @Bg5);
+  .create-colour(~'t1', @T1);
+  .create-colour(~'t2', @T2);
+  .create-colour(~'t3', @T3);
+  .create-colour(~'b1', @B1);
+  .create-colour(~'b2', @B2);
+  .create-colour(~'f1', @F1);
+  .create-colour(~'f2', @F2);
+  .create-colour(~'f3', @F3);
+  .create-colour(~'f4', @F4);
+  .create-colour(~'l1', @L1);
+  .create-colour(~'l2', @L2);
+  .create-colour(~'c1', @C1);
+  .create-colour(~'c2', @C2);
+  .create-colour(~'c3', @C3);
+  .create-colour(~'c4', @C4);
+}
+
+.create-colour(@type: ''; @color: '';) {
+  // background
+  .create-background(@type: @type; @color: @color;);
+  // color
+  .create-color(@type: @type; @color: @color;);
+  // border-color
+  .create-border-color(@type: @type; @color: @color;)
+}
+
+.create-background(
+  @type: '';
+  @color: '';
+) {
+  .iui-bg-@{type} {
+    background-color: @color;
+  }
+  .iui-hover-bg-@{type}:hover {
+    background-color: @color;
+  }
+}
+
+.create-color(
+  @type: '';
+  @color: '';
+) {
+  .iui-c-@{type} {
+    color: @color;
+  }
+  .iui-hover-c-@{type}:hover {
+    color: @color;
+  }
+}
+
+.create-border-color(
+  @type: '';
+  @color: '';
+) {
+  .iui-bc-@{type} {
+    border: 1px solid @color;
+  }
+  .iui-hover-bc-@{type}:hover {
+    border: 1px solid @color;
+  }
+  
+  // top
+  .iui-bct-@{type} {
+    border-top: 1px solid @color;
+  }
+  .iui-hover-bct-@{type}:hover {
+    border-top: 1px solid @color;
+  }
+  
+  // right
+  .iui-bcr-@{type} {
+    border-right: 1px solid @color;
+  }
+  .iui-hover-bcr-@{type}:hover {
+    border-right: 1px solid @color;
+  }
+  
+  // bottom
+  .iui-bcb-@{type} {
+    border-bottom: 1px solid @color;
+  }
+  .iui-hover-bcb-@{type}:hover {
+    border-bottom: 1px solid @color;
+  }
+  
+  // left
+  .iui-bcl-@{type} {
+    border-left: 1px solid @color;
+  }
+  .iui-hover-bcl-@{type}:hover {
+    border-left: 1px solid @color;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "independent",
+  "packages": [
+    "packages/widgets/*",
+    "packages/components/*",
+    "packages/translation",
+    "src"
+  ]
+}

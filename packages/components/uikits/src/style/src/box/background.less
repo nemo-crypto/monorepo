@@ -1,0 +1,22 @@
+.bg-type(@type: 'primary'; @color: ''; ) {
+  .bg-@{type} {
+    background: @color !important;
+  }
+
+  &.bg-@{type} {
+    background: @color !important;
+  }
+
+
+  .active-bg-@{type}.active,
+  .hover-bg-@{type}:hover {
+    background: @color  !important;
+  }
+}
+
+.bg-type(@type: ~"darken-1"; @color: rgba(0, 0, 0, 0.15); );
+.bg-type(@type: ~"darken-2"; @color: rgba(0, 0, 0, 0.35); );
+.bg-type(@type: ~"lighten-1"; @color: rgba(255, 255, 255, 0.05); );
+.bg-type(@type: ~"lighten-2"; @color: rgba(255, 255, 255, 0.15); );
+.bg-type(@type: ~"page-light"; @color: rgba(49, 105, 255, 0.11); );
+.bg-type(@type: ~"page-dark"; @color: #1c2330; );

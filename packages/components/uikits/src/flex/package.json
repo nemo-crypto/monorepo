@@ -1,0 +1,11 @@
+{
+  "name": "@xatom/flex",
+  "version": "1.0.1",
+  "description": "flex",
+  "author": "https://github.com/nemo-crypto",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ]
+}

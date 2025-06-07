@@ -1,0 +1,43 @@
+.create-iui-navbar-common-item-row(
+  @T1: '';
+  @L1: '';
+  @C2: '';
+) {
+  .iui-navbar-common-item-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+
+    &-icon {
+      font-size: 24px !important;
+      color: @T1;
+    }
+
+    &-info {
+      flex: 1;
+      margin-left: 16px;
+      line-height: 16px;
+
+      &-title {
+        display: flex;
+
+        &-label {
+          font-weight: 500;
+          color: @T1;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &:hover {
+      background: @C2;
+      cursor: pointer;
+    }
+  }
+
+  .iui-navbar-common-item {
+    &:not(:last-child) {
+      border-bottom: 1px solid @L1;
+    }
+  }
+}

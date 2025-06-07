@@ -1,0 +1,33 @@
+.create-iui-tooltip(
+  @Bg3: '';
+  @T1: '';
+  @T2: '';
+) {
+  .iui-tooltip-overlay {
+    .ant-tooltip-inner {
+      background: @Bg3 !important;
+      color: @T1 !important;
+      border-radius: 4px;
+      padding: 12px !important;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+    }
+
+    .ant-tooltip-arrow {
+      border-right-color: @Bg3 !important;
+      border-bottom-color: @Bg3 !important;
+
+      &::before {
+        background: @Bg3 !important;
+        width: 9px;
+        height: 9px;
+      }
+    }
+    
+    &-underline {
+      display: inline-block;
+      vertical-align: top;
+      padding-bottom: 1px;
+      border-bottom: 1px dashed @T2;
+    }
+  }
+}

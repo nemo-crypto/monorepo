@@ -1,0 +1,47 @@
+.sv-type(@type: 1) {
+  .sv-@{type} {
+    &>* {
+      margin-bottom: 5px * @type  !important;
+    }
+
+    &>:last-child,
+    .s-no {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+.sh-type(@type: 1) {
+  .sh-@{type} {
+    &>* {
+      margin-right: 5px * @type  !important;
+    }
+
+    &>:last-child,
+    .s-no {
+      margin-right: 0px !important;
+    }
+  }
+}
+
+.sv-type(@type: 1);
+.sv-type(@type: 2);
+.sv-type(@type: 3);
+.sv-type(@type: 4);
+.sv-type(@type: 5);
+.sv-type(@type: 6);
+.sv-type(@type: 7);
+.sv-type(@type: 8);
+.sv-type(@type: 9);
+.sv-type(@type: 10);
+
+.sh-type(@type: 1);
+.sh-type(@type: 2);
+.sh-type(@type: 3);
+.sh-type(@type: 4);
+.sh-type(@type: 5);
+.sh-type(@type: 6);
+.sh-type(@type: 7);
+.sh-type(@type: 8);
+.sh-type(@type: 9);
+.sh-type(@type: 10);

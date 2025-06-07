@@ -1,0 +1,62 @@
+.create-iui-navbar-download(@T1: '';
+  @C1: '';
+  @F1: '';
+
+) {
+  .iui-navbar-download {
+    color: @T1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 12px;
+
+    &-icon {
+      font-size: 24px !important;
+      cursor: pointer;
+    }
+  }
+
+  .iui-navbar-download-overlay {
+    padding: 20px;
+
+    &-qrcode {
+      width: 136px;
+      margin-bottom: 16px;
+    }
+
+    &-title {
+      font-size: 14px;
+      line-height: 16px;
+      color: @T1;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    &-platform {
+      display: flex;
+      justify-content: space-between;
+
+      &-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: @C1;
+        color: @T1;
+        cursor: pointer;
+
+        &-icon {
+          font-size: 20px !important;
+        }
+
+        &:hover {
+          background: #FFFFFF;
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
+          color: @F1;
+        }
+      }
+    }
+  }
+}

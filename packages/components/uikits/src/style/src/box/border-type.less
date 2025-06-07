@@ -1,0 +1,26 @@
+.border-color-type(@type: ''; @color: '') {
+  .bc-@{type} {
+    border-color: @color;
+  }
+  .bc-@{type}-im {
+    border-color: @color !important;
+  }
+  .hover-bc-@{type} {
+    border-color: @color  !important;
+  }
+}
+
+.border-type(@type: ''; @color: ''; ) {
+  .bt-@{type} {
+    border-bottom: 1px solid @color;
+  }
+  .bt-@{type}-im {
+    border-bottom: 1px solid @color !important;
+  }
+  .hover-bt-@{type} {
+    border-bottom: 1px solid @color  !important;
+  }
+}
+
+.create-border-color-types() {}
+.create-border-types() {}

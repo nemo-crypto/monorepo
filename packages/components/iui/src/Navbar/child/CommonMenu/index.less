@@ -1,0 +1,78 @@
+.create-iui-navbar-common-menu(
+  @T1: '';
+  @L1: '';
+  @C2: '';
+) {
+  .iui-nabvar-common-menu {
+    position: relative;
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 0;
+      height: 1px;
+      background: @L1;
+    }
+
+    &-item {
+      &-title {
+        display: block;
+        display: flex;
+        padding: 16px 24px;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          background: @C2;
+          color: @T1;
+        }
+
+        &-label,
+        &-label:hover,
+        &-expand {
+          color: @T1;
+        }
+
+        &-label {
+          flex: 1;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 24px;
+        }
+
+        &-expand {
+          font-size: 24px !important;
+          transition: all 300ms;
+        }
+      }
+
+      &-submenu {
+        display: none;
+
+        &-item {
+          display: flex;
+          align-items: center;
+          line-height: 20px;
+          padding: 13px 40px;
+          color: @T1;
+
+          &:hover {
+            background: @C2;
+            color: @T1;
+          }
+        }
+      }
+
+      &.is-active .iui-nabvar-common-menu-item-title-expand {
+        transform: rotate(180deg);
+      }
+
+      &.is-active .iui-nabvar-common-menu-item-submenu {
+        display: block;
+      }
+    }
+  }
+}

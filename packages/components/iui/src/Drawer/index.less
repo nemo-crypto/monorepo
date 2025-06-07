@@ -1,0 +1,93 @@
+.create-iui-drawer(
+  @T1: '';
+  @T2: '';
+  @Bg4: '';
+) {
+  .iui-drawer {
+    .ant-drawer-content-wrapper {
+      box-shadow: none;
+    }
+  
+    .ant-drawer-content {
+      background: @Bg4 !important;
+    }
+  
+    .ant-drawer-body {
+      padding: 0 !important;
+    }
+    
+    &-close {
+      position: absolute;
+      z-index: 10;
+      width: 24px;
+      height: 24px !important;
+      color: @T2;
+      font-size: 24px !important;
+      cursor: pointer;
+
+      &:hover {
+        color: @T1;
+      }
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &-body {
+      flex: 1;
+      min-height: 24px;
+    }
+    
+    &.ant-drawer-bottom .iui-drawer-wrap,
+    &.ant-drawer-top .iui-drawer-wrap {
+      max-height: 90vh;   /* 作为 fallback */
+      max-height: 90dvh;  /* 优先使用 */
+    }
+    
+    &-web .iui-drawer-wrap {
+      padding: 24px;
+    }
+    
+    &-web .iui-drawer-scrollbar-auto {
+      overflow: auto;
+    }
+    
+    &-web .iui-drawer-scrollbar-scroll {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      margin: 0 -24px;
+      padding: 0 16px 0 24px;
+    }
+    
+    &-web .iui-drawer-close {
+      top: 24px;
+      right: 24px;
+    }
+    
+    &-h5 .iui-drawer-wrap {
+      padding: 16px;
+    }
+    
+    &-h5 .iui-drawer-scrollbar-auto {
+      overflow: auto;
+    }
+    
+    &-h5 .iui-drawer-scrollbar-scroll {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      margin: 0 -16px;
+      padding: 0 8px 0 16px;
+    }
+    
+    &-h5 .iui-drawer-close {
+      top: 16px;
+      right: 16px;
+    }
+    
+    &-shape-round .ant-drawer-content {
+      border-radius: 12px 12px 0 0;
+    }
+  }
+}

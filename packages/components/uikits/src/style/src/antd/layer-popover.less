@@ -1,0 +1,34 @@
+// 不自动生成theme,
+// 默认：使用 antd的默认风格
+// 定制：如有需要，在自己的theme中，生成个性化的 dropdown
+.create-antd-popover(@type: ''; @bg: ''; @fc: ''; ) {
+
+    // new  type: ant-popover-xx
+    .ant-popover.ant-popover-@{type} {
+        background: @bg;
+
+        .ant-popover-inner {
+            background-color: @bg;
+        }
+
+        &.ant-popover-placement-top>.ant-popover-content>.ant-popover-arrow,
+        &.ant-popover-placement-topLeft>.ant-popover-content>.ant-popover-arrow,
+        &.ant-popover-placement-topRight>.ant-popover-content>.ant-popover-arrow {
+            border-right-color: @bg;
+            border-bottom-color: @bg;
+        }
+
+        &.ant-popover-placement-left>.ant-popover-content>.ant-popover-arrow,
+        &.ant-popover-placement-leftTop>.ant-popover-content>.ant-popover-arrow,
+        &.ant-popover-placement-leftBottom>.ant-popover-content>.ant-popover-arrow {
+            border-top-color: @bg;
+            border-right-color: @bg;
+        }
+    }
+}
+
+.ant-popover.rs {
+    .ant-popover-inner-content {
+        padding: 0px !important;
+    }
+}

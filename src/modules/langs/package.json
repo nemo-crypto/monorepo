@@ -1,0 +1,11 @@
+{
+  "name": "@xatom/langs",
+  "version": "1.0.2",
+  "description": "",
+  "author": "https://github.com/nemo-crypto",
+  "main": "src/index.js",
+  "license": "ISC",
+  "files": [
+    "src"
+  ]
+}

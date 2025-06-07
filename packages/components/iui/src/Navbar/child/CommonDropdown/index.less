@@ -1,0 +1,41 @@
+.create-iui-navbar-common-dropdown(
+  @T1: '';
+  @F4: '';
+) {
+  .iui-navbar-common-dropdown {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 12px;
+
+    &-label {
+      color: @T1;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &-arrow {
+      margin-left: 4px;
+      color: @T1;
+      font-size: 12px !important;
+      transition: all 300ms;
+    }
+
+    &-hot {
+      margin-left: 4px;
+      color: @F4;
+    }
+    
+    &.ant-dropdown-open .iui-navbar-common-dropdown-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .iui-navbar-common-dropdown-overlay {
+    &-menu-hot {
+      margin-left: 4px;
+      color: @F4;
+    }
+  }
+}

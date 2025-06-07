@@ -1,0 +1,90 @@
+.ant-modal {
+  max-width: 100% !important;
+  width: 460px; // @modal-width: 460px;
+}
+
+.box-modal {
+  padding: 30px;
+  width: 100%;
+}
+
+.create-antd-modal() {
+  .box-modal {
+    background-color: @bg-modal;
+  }
+
+  &:not(body) {
+
+    &.box-modal,
+    .box-modal {
+      background: @bg-modal  !important;
+    }
+  }
+}
+
+// 强制要求 Modal的样式单独实现，不依赖系统的设置
+.ant-modal {
+  background: transparent !important;
+
+  .ant-modal-content {
+    background: transparent !important;
+    border-radius: 16px;
+  }
+
+  .ant-modal-body {
+    padding: 0px !important;
+    background: transparent !important;
+  }
+}
+
+//========================================
+// Model Confirm
+//========================================
+
+.ant-modal-confirm {
+  .ant-modal-content {
+    background: #fff !important;
+  }
+
+  .ant-modal-close {
+    display: block;
+
+    svg {
+      color: #c0c5d2;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 30px !important;
+
+    .anticon {
+      display: none !important;
+    }
+  }
+
+  .ant-modal-confirm-body-wrapper {
+    text-align: center !important;
+  }
+
+  .ant-modal-confirm-title {
+    font-size: 20px !important;
+  }
+
+  .ant-modal-confirm-content {
+    margin-left: 0 !important;
+  }
+
+  .ant-modal-confirm-btns {
+    display: flex;
+    float: none !important;
+    margin-top: 30px !important;
+
+    .ant-btn {
+      flex: 1;
+    }
+
+    button+button {
+      margin-left: 20px !important;
+    }
+  }
+}

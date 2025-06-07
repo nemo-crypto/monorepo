@@ -1,0 +1,13 @@
+{
+  "name": "@xatom/translang",
+  "version": "0.0.8",
+  "description": "转换指定格式的xlsx文件为项目里的语言json文件",
+  "bin": {
+    "translang": "/bin/index.js"
+  },
+  "author": "https://github.com/nemo-crypto",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx": "0.18.5"
+  }
+}

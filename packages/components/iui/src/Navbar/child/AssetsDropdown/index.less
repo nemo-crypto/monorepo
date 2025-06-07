@@ -1,0 +1,144 @@
+.create-iui-navbar-assets(
+  @T1: '';
+  @T2: '';
+  @L1: '';
+  @C2: '';
+) {
+  .iui-navbar-assets {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 12px;
+
+    &-label {
+      color: @T1;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &-arrow {
+      margin-left: 4px;
+      color: @T1;
+      font-size: 12px !important;
+      transition: all 300ms;
+    }
+    
+    &.ant-dropdown-open .iui-navbar-assets-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .iui-navbar-assets-overlay {
+    &-total {
+      padding: 16px 16px 14px;
+
+      &-label {
+        display: flex;
+        margin-bottom: 4px;
+        color: @T2;
+
+        &-text {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+
+        &-icon {
+          margin-left: 4px;
+          cursor: pointer;
+          
+          &:hover {
+            color: @T1;
+          }
+        }
+      }
+
+      &-amount {
+        display: flex;
+        align-items: center;
+        color: @T1;
+        margin-bottom: 4px;
+
+        &-text {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 26px;
+        }
+
+        &-unit {
+          height: 26px !important;
+          margin-left: 8px;
+
+          .ant-select {
+            &-selection {
+              border: none;
+
+              &__rendered {
+                line-height: 26px !important;
+                margin: 0 16px 0 0 !important;
+              }
+            }
+
+            &-arrow {
+              right: 0 !important;
+
+              &-icon {
+                font-size: 12px !important;
+              }
+            }
+          }
+        }
+      }
+
+      &-currency {
+        font-size: 14px;
+        line-height: 16px;
+        color: @T2;
+      }
+    }
+
+    &-control {
+      display: flex;
+      padding: 0 12px;
+      color: @T1;
+      border-bottom: 1px solid @L1;
+
+      &--drawer {
+        border-bottom: none;
+        padding: 0 24px;
+      }
+
+      &-item {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 80px;
+        padding: 14px;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: 4px;
+        }
+        
+        &:hover {
+          border-radius: 4px;
+          background: @C2;
+        }
+
+        &-icon {
+          margin-bottom: 8px;
+          font-size: 24px !important;
+        }
+
+        &-label {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

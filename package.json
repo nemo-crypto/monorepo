@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "version": "0.0.0",
+  "author": "https://github.com/nemo-crypto",
+  "devDependencies": {
+    "lerna": "3.15.0"
+  },
+  "scripts": {
+    "versions": "lerna ls --long",
+    "diff": "git log --pretty=oneline --no-merges",
+    "i18n": "node --experimental-modules --loader ./build/custom-loader.mjs build/build-i18n.js"
+  },
+  "dependencies": {
+    "glob": "7.2.0"
+  }
+}

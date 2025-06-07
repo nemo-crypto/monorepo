@@ -1,0 +1,131 @@
+.create-iui-button(
+  @T1: '';
+  @B1: '';
+  @F1: '';
+  @F2: '';
+  @F3: '';
+  @Bg1: ''; 
+) {
+  .iui-button {
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+
+    // default
+    background: @B1;
+    color: @T1;
+    height: 32px;
+    font-size: 14px;
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      background: tint(@B1, 10%);
+      color: @T1;
+    }
+
+    &[disabled] {
+      opacity: 0.3;
+    }
+
+    // type - primary
+    &.ant-btn-primary {
+      background: @F1;
+      color: #ffffff;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):focus {
+        background: tint(@F1, 10%);
+        color: #ffffff;
+      }
+
+      &[disabled] {
+        opacity: 0.3;
+      }
+    }
+
+    // type - up
+    &.ant-btn-up {
+      background: @F2;
+      color: #ffffff;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):focus {
+        background: tint(@F2, 10%);
+        color: #ffffff;
+      }
+
+      &[disabled] {
+        opacity: 0.3;
+      }
+    }
+
+    // type - down
+    &.ant-btn-down {
+      background: @F3;
+      color: #ffffff;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):focus {
+        background: tint(@F3, 10%);
+        color: #ffffff;
+      }
+
+      &[disabled] {
+        opacity: 0.3;
+      }
+    }
+
+    // type - line
+    &.ant-btn-line {
+      background: @Bg1;
+      color: @F1;
+      border: 1px solid @F1;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):focus {
+        background: @Bg1;
+        color: @F1;
+        border-color: @F1;
+      }
+
+      &[disabled] {
+        opacity: 0.3;
+      }
+    }
+
+    // type - text
+    &.ant-btn-text {
+      background: transparent;
+      color: @F1;
+
+      &:not([disabled]):hover,
+      &:not([disabled]):focus {
+        background: transparent;
+        color: @F1;
+      }
+
+      &[disabled] {
+        opacity: 0.3;
+      }
+    }
+
+    // size - max
+    &-size-max {
+      height: 50px;
+      font-size: 16px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    // size - large
+    &-size-large {
+      height: 40px;
+    }
+
+    // size - small
+    &-size-small {
+      height: 30px;
+      font-size: 12px;
+    }
+  }
+}

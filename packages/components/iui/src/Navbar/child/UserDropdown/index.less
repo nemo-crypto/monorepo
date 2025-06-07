@@ -1,0 +1,152 @@
+.create-iui-navbar-user(
+  @T1: '';
+  @F2: '';
+  @F3: '';
+  @F4: '';
+  @L1: '';
+  @T2: '';
+) {
+  .iui-navbar-user {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 12px;
+
+    &-trigger {
+      cursor: pointer;
+    }
+  }
+
+  .iui-navbar-user-status {
+    margin-left: 16px;
+    padding: 0 8px;
+    border-radius: 10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+
+    &.is-verified {
+      color: @F2;
+      background: fade(@F2, 10%);
+    }
+
+    &.is-pending,
+    &.is-unverified {
+      color: @F4;
+      background: fade(@F4, 10%);
+    }
+
+    &.is-failed {
+      color: @F3;
+      background: fade(@F3, 10%);
+    }
+  }
+
+  .iui-navbar-user-overlay {
+    &-user {
+      padding: 16px 16px 14px;
+      border-bottom: 1px solid @L1;
+
+      &--drawer {
+        border-bottom: none;
+        padding: 16px 24px;
+      }
+
+      &-account {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        color: @T1;
+
+        &-label {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 26px;
+        }
+
+        &-eye {
+          margin-left: 8px;
+          cursor: pointer;
+        }
+      }
+
+      &-uid {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        &-label {
+          font-size: 14px;
+          line-height: 16px;
+          color: @T2;
+        }
+
+        &-copy {
+          color: @T2;
+          margin-left: 8px;
+          cursor: pointer;
+          
+          &:hover {
+            color: @T1;
+          }
+        }
+
+        &-vip {
+          margin-left: 8px;
+          cursor: pointer;
+          width: 46px;
+          height: 20px;
+        }
+      }
+
+      &-name {
+        display: flex;
+        align-items: center;
+        min-height: 20px;
+
+        &-label {
+          font-size: 14px;
+          line-height: 16px;
+          color: @T2;
+        }
+
+        &-edit {
+          color: @T2;
+          margin-left: 8px;
+          cursor: pointer;
+          
+          &:hover {
+            color: @T1;
+          }
+        }
+
+        &-tag {
+          margin-left: 8px;
+          padding: 0 8px;
+          font-size: 12px;
+          line-height: 20px;
+          font-weight: 400;
+          border-radius: 10px;
+          &.name-tag-error {
+            color: @F3;
+            background: fade(@F3, 10%);
+          }
+          &.name-tag-warn {
+            color: @F4;
+            background: fade(@F4, 10%);
+          }
+        }
+
+        &-tooltip {
+          color: @T1;
+        }
+      }
+    }
+  }
+  
+  .iui-navbar-user-drawer {
+    .iui-drawer-wrap {
+      padding: 64px 0 48px;
+    }
+  }
+}

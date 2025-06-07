@@ -1,0 +1,42 @@
+@keyframes slideShine {
+  0% {
+    background-position: -20% 0
+  }
+
+  to {
+    background-position: 120% 100%
+  }
+}
+
+@bg: #ee781c;
+@bg-light: lighten(#ee781c, 8%);
+
+.blink-bg {
+  background: @bg linear-gradient(-45deg, @bg 42%, @bg-light 48%, @bg-light 52%, @bg 58%) no-repeat 0 0 !important;
+  background-size: 200% 100% !important;
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: slideShine;
+}
+
+.blink-text {
+  background: @bg linear-gradient(-45deg, @bg 42%, @bg-light 48%, @bg-light 52%, @bg 58%) no-repeat 0 0 !important;
+  background-size: 20% 100% !important;
+  background-clip: text !important;
+  // text-fill-color: transparent !important;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: slideShine;
+}

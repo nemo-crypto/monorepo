@@ -1,0 +1,19 @@
+// 强制要求 Modal的样式单独实现，不依赖系统的设置
+.ant-drawer {
+  background: transparent !important;
+
+  .ant-drawer-content {
+    background: transparent !important;
+  }
+
+  .ant-drawer-body {
+    padding: 0px !important;
+    background: transparent !important;
+    height: 100%;
+
+    &>* {
+      height: 100%;
+    }
+  }
+
+}

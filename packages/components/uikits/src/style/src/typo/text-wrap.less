@@ -1,0 +1,42 @@
+.text-nowrap {
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.text-nowrap-flex {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  -webkit-box-flex: 1;
+  height: inherit
+}
+
+.text-nowrap-multi {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2
+}
+
+.typo-nowrap {
+  &:extend(.text-nowrap);
+}
+
+.typo-nowrap-visible {
+  &:extend(.text-nowrap);
+  overflow: visible;
+}
+
+.typo-ellipsis {
+  &:extend(.text-truncate);
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@xatom/ui",
+  "version": "1.0.14",
+  "description": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://github.com/nemo-crypto/monorepo"
+  }
+}

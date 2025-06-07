@@ -1,0 +1,60 @@
+  .tag-basic {
+    // TODO
+  }
+
+  .tag-small {
+    height: 15px;
+    line-height: 15px - 2px;
+    padding: 0 5px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .tag-middle {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px - 2px;
+    padding: 0 7.5px;
+    box-sizing: border-box;
+  }
+
+  .tag-large {
+    height: 25px;
+    line-height: 25px - 2px;
+    padding: 0 10px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .tag-type(@type: ''; @bg: ''; @br: ''; ) {
+    .tag-@{type} {
+      border: 1px solid @bg;
+      background: @bg;
+      color: #fff;
+      border-radius: @br;
+      font-size: 12px;
+
+      &.tag-outline {
+        background: transparent;
+        color: @bg;
+        border: 1px solid @bg;
+      }
+    }
+
+  }
+
+  .tag-light-type(@type: ''; @bg: ''; @bc: ''; @br: ''; ) {
+    .tag-@{type} {
+      border: 1px solid transparent;
+      color: @bc;
+      background: @bg;
+      border-radius: @br;
+      font-size: 12px;
+
+      &.tag-outline {
+        background: transparent;
+        border: 1px solid @bc;
+        color: @bc;
+      }
+    }
+  }

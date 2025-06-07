@@ -1,0 +1,50 @@
+.ui-tips {
+  display: flex;
+  padding: 10px;
+  line-height: 20px;
+  font-size: 14px;
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+  }
+
+  &-text {
+    margin-left: 6px;
+  }
+
+  &--shape-round {
+    border-radius: 6px;
+  }
+
+  &--type-remind {
+    background: rgba(255, 153, 0, 0.06);
+  }
+
+  &--type-remind &-icon {
+    background: url(./images/icon-remind.png) 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  &--type-remind &-text {
+    color: rgba(255, 153, 0, 1);
+  }
+
+  &--type-warning {
+    background: rgba(252, 60, 86, 0.06);
+  }
+
+  &--type-warning &-icon {
+    background: url(./images/icon-warning.png) 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  &--type-warning &-text {
+    color: rgba(252, 60, 86, 1)
+  }
+
+  &--align-center {
+    justify-content: center;
+  }
+}

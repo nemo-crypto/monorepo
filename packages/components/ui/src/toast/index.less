@@ -1,0 +1,68 @@
+.ant-message {
+  &-notice {
+    &-content {
+      box-shadow: none;
+      border-radius: 6px;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+
+  &-custom-content {
+    padding: 12px 20px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      display: none;
+    }
+
+    .anticon {
+      top: 0;
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+    }
+  }
+
+  &-info {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: rgba(137, 137, 137, 1);
+
+    .anticon {
+      background: url(./images/icon-info.png) 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  &-success {
+    background-color: rgba(0, 191, 117, 0.06);
+    color: rgba(0, 191, 117, 1);
+
+    .anticon {
+      background: url(./images/icon-success.png) 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  &-error {
+    background-color: rgba(252, 60, 86, 0.06);
+    color: rgba(252, 60, 86, 1);
+
+    .anticon {
+      background: url(./images/icon-error.png) 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+  
+  &-warning {
+    background-color: rgba(255, 153, 0, 0.06);
+    color: rgba(255, 153, 0, 1);
+
+    .anticon {
+      background: url(./images/icon-warning.png) 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+}

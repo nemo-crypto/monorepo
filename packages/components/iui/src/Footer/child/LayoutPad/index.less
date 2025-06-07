@@ -1,0 +1,147 @@
+.create-iui-footer-pad(@Bg1: '';
+  @Bg2: '';
+  @T2: '';
+  @T1: '';
+  @C3: '';
+  @F1: '';
+  @L2: '';
+
+) {
+  .iui-footer-pad {
+    position: relative;
+    z-index: 100;
+    background: @Bg1;
+
+    &-wrap {
+      padding: 24px;
+    }
+
+    &-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 24px 0;
+
+      &-col {
+        &-title {
+          font-size: 18px;
+          line-height: 22px;
+          font-weight: 600;
+          color: @T1;
+          margin-bottom: 24px;
+        }
+
+        &-item {
+          &:not(:last-child) {
+            margin-bottom: 8px;
+          }
+
+          &-link {
+            font-size: 14px;
+            line-height: 22px;
+            color: @T2;
+
+            &:hover {
+              color: @T1;
+            }
+          }
+        }
+      }
+    }
+
+    &-follow {
+      padding-bottom: 24px;
+
+      &-title {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 600;
+        color: @T1;
+        margin-bottom: 24px;
+      }
+
+      &-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+
+      &-links {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 4px;
+
+        &-item {
+          width: 24px;
+          height: 24px;
+          font-size: 24px !important;
+          color: @T1;
+          cursor: pointer;
+          border-radius: 50%;
+          overflow: hidden;
+          background: @Bg2;
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+
+          &:hover {
+            color: @F1;
+          }
+        }
+      }
+
+      &-contact {
+        display: flex;
+
+        &-item {
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+
+          &-label {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17px;
+            margin-bottom: 2px;
+            color: @T1;
+          }
+
+          &-value {
+            font-size: 12px;
+            line-height: 22px;
+            color: @T2;
+
+            &:hover {
+              color: @T1;
+            }
+          }
+        }
+      }
+    }
+
+    &-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-top: 1px solid @L2;
+
+      &-copyright {
+        font-size: 14px;
+        line-height: 22px;
+        color: @T2;
+      }
+
+      &-thirdparty {
+        display: flex;
+
+        &-item {
+          &:not(:last-child) {
+            margin-right: 32px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.typo-button-transparent {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+
+.ant-btn-group {
+  &:extend(.d-flex);
+
+  .ant-btn {
+    &:extend(.box-fluid);
+  }
+}
+
+.button-type(@type: 1; @bg-color: ''; @fc-color: ~'#fff'; @border-color: transparent; @br: ''; ) {
+  .typo-button-@{type} {
+    background: @bg-color  !important;
+    border: 1px solid @border-color  !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: @fc-color  !important;
+    border-radius: @br;
+
+    &:hover {
+      background: lighten(@bg-color, 5%) !important;
+    }
+
+    &:active {
+      box-shadow: inset -2px -2px 1px rgba(0, 0, 0, 0.15) !important;
+      background: darken(@bg-color, 5%) !important;
+    }
+
+    &.typo-button-disabled {
+      // border: fade(@border-color, 65%) !important;
+      // background: fade(@bg-color, 65%) !important;
+      // color: fade(@fc-color, 40%) !important;
+      opacity: 0.5;
+    }
+
+    &.ant-btn-background-ghost {
+      background: transparent !important;
+      border-color: @bg-color  !important;
+      color: @bg-color  !important;
+
+      &.typo-button-disabled {
+        color: @bg-color  !important;
+        opacity: 0.5;
+      }
+    }
+
+    &.typo-button-outline {
+      background: transparent !important;
+      border-color: @bg-color  !important;
+      color: @bg-color  !important;
+
+      &.typo-button-disabled {
+        color: @bg-color  !important;
+        opacity: 0.5;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.ant-pagination {
+  &>li {
+    min-width: 28px;
+    height: 28px;
+    line-height: 24px;
+
+    &.ant-pagination-prev .ant-pagination-item-link,
+    &.ant-pagination-next .ant-pagination-item-link {
+      background: transparent;
+      border: none;
+    }
+  }
+}
+
+.create-antd-pagination() {
+  .ant-pagination {
+    &>li {
+      background: transparent;
+      border: 1px solid @bc-grey;
+      color: @fc-grey-light;
+
+      &:hover {
+        border-color: @brand-primary;
+      }
+
+      a {
+        color: @fc-grey-light;
+
+        span {
+          color: @fc-grey-light  !important;
+        }
+      }
+
+      &.ant-pagination-item-active {
+        color: @brand-primary;
+        border: 1px solid @brand-primary;
+
+        a {
+          color: @brand-primary;
+        }
+      }
+
+      &.ant-pagination-disabled {
+        opacity: 0.5;
+        color: @fc-grey-lighter;
+
+        a {
+          color: @fc-grey-lighter;
+        }
+
+        &:hover {
+          border-color: @bc-grey;
+        }
+      }
+    }
+
+    &.ant-pagination-disabled {
+      color: @fc-grey-lighter;
+      opacity: 0.5;
+
+      li {
+        background: transparent;
+        border: 1px solid @bc-grey-lighter;
+
+        a {
+          color: @fc-grey-lighter;
+
+          &:hover {
+            background: transparent;
+          }
+        }
+      }
+
+      &:hover {
+        border-color: @bc-grey-lighter;
+      }
+    }
+  }
+
+  .simple-pagination {
+    .pagination-item {
+      min-width: 28px;
+      height: 28px;
+      .center-vh;
+      border: 1px solid @bc-grey;
+      color: @fc-grey;
+      border-radius: @br-main;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: @brand-primary;
+      }
+
+      &.disabled {
+        opacity: 0.5;
+        border: 1px solid @bc-grey-light;
+        color: @fc-grey-lighter;
+        cursor: not-allowed;
+
+        &:hover {
+          border-color: @bc-grey-light;
+        }
+      }
+
+      &.active {
+        border: 1px solid @brand-primary;
+        color: @brand-primary;
+      }
+
+    }
+  }
+}

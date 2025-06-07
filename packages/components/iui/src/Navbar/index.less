@@ -1,0 +1,147 @@
+@import './child/AssetsDropdown/index.less';
+@import './child/CommonDropdown/index.less';
+@import './child/CommonItem/index.less';
+@import './child/CommonMenu/index.less';
+@import './child/DownloadDropdown/index.less';
+@import './child/LanguageDropdown/index.less';
+@import './child/MessageDropdown/index.less';
+@import './child/MoreDrawer/index.less';
+@import './child/OrdersDropdown/index.less';
+@import './child/UserDropdown/index.less';
+
+.create-iui-navbar(
+  @Bg1: '';
+  @T1: '';
+  @T2: '';
+  @L1: '';
+  @F1: '';
+  @F2: '';
+  @F3: '';
+  @F4: '';
+  @C2: '';
+) {
+  .iui-navbar-layout {
+    height: 64px;
+    display: flex;
+    padding: 0 24px;
+    justify-content: space-between;
+    align-items: center;
+    background: @Bg1;
+    position: relative;
+    z-index: 100;
+
+    &.is-transparent {
+      background: transparent;
+    }
+
+    &-col {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      &-item {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        line-height: 24px;
+      }
+    }
+
+    &-left {
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+
+    &-login,
+    &-register {
+      padding: 0 12px;
+    }
+
+    &-login,
+    &-login:hover {
+      font-size: 14px;
+      color: @T1;
+      font-weight: 500;
+      background: transparent !important;
+    }
+  }
+
+  .iui-navbar-app {
+    position: relative;
+    width: 100%;
+    background: @Bg1;
+    color: @T1;
+
+    &-back {
+      position: absolute;
+      bottom: 11px;
+      left: 15px;
+      font-size: 22px !important;
+    }
+
+    &-title {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 44px;
+      min-height: 44px;
+      text-align: center;
+    }
+  }
+
+  .create-iui-navbar-assets(@T1: @T1;
+    @T2: @T2;
+    @L1: @L1;
+    @C2: @C2;
+  );
+
+  .create-iui-navbar-common-dropdown(@T1: @T1;
+    @F4: @F4;
+  );
+
+  .create-iui-navbar-common-item-row(@T1: @T1;
+    @L1: @L1;
+    @C2: @C2;
+  );
+
+  .create-iui-navbar-common-menu(@T1: @T1;
+    @L1: @L1;
+    @C2: @C2;
+  );
+
+  .create-iui-navbar-download(@T1: @T1;
+    @C1: @C1;
+    @F1: @F1;
+  );
+
+  .create-iui-navbar-language-dropdown(@T1: @T1;
+    @C2: @C2;
+    @F1: @F1;
+  );
+
+  .create-iui-navbar-message(@T1: @T1;
+    @T2: @T2;
+    @F1: @F1;
+    @F3: @F3;
+  );
+
+  .create-iui-navbar-more(@T1: @T1;
+  );
+
+  .create-iui-navbar-orders(@T1: @T1;
+  );
+
+  .create-iui-navbar-user(@T1: @T1;
+    @F2: @F2;
+    @F3: @F3;
+    @F4: @F4;
+    @L1: @L1;
+    @T2: @T2;
+  );
+}

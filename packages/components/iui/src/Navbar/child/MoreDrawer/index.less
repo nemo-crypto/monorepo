@@ -1,0 +1,34 @@
+.create-iui-navbar-more(
+  @T1: '';
+) {
+  .iui-navbar-more {
+    color: @T1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 12px;
+
+    &-icon {
+      font-size: 24px !important;
+      cursor: pointer;
+    }
+  }
+
+  .iui-navbar-more-drawer {
+    .iui-drawer-wrap {
+      padding: 64px 0 48px;
+    }
+    
+    &-unloged {
+      padding: 0 24px;
+      
+      &-register {
+        margin-bottom: 8px;
+      }
+
+      &-login {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

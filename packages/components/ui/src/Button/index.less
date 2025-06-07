@@ -1,0 +1,42 @@
+.ui-button {
+  text-shadow: none;
+  box-shadow: none;
+  
+  &.ant-btn-lg {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+
+  &.ant-btn-sm {
+    height: 40px;
+    padding: 0 20px;
+  }
+
+  &.ant-btn-primary {
+    &:hover {
+      background-color: #2958d6;
+      border-color: #2958d6;
+    }
+
+    &[disabled] {
+      color: #fff;
+      background-color: rgba(49, 105, 255, 0.3);
+      border-color: rgba(49, 105, 255, 0.3);
+    }
+  }
+
+  &.ant-btn-minor {
+    background: #f6f6f6;
+    color: #000;
+    border: none;
+
+    &:hover {
+      background: #eaecef;
+    }
+  }
+
+  &.ant-btn-link {
+    height: auto;
+    padding: 0;
+  }
+}

@@ -1,0 +1,247 @@
+.g-footer {
+  background-color: #1e2329;
+  padding: 30px 20px 0;
+  &-follow {
+    margin-bottom: 40px;
+    &-title {
+      font-size: 20px;
+      line-height: 26px;
+      color: #fff;
+      margin-bottom: 2px;
+      letter-spacing: 1.1px;
+      padding-left: 10px;
+    }
+    &-main {
+      width: 180px;
+      height: 80px;
+    }
+    &-thirdparty {
+      margin-top: 195px;
+      width: 205px;
+      &-item {
+        margin-right: 24px;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+    }
+    &-thirdparty-mobile {
+      width: 100%;
+      &-item {
+        display: inline-block;
+        width: 21%;
+        margin-right: 5% !important;
+        &:last-child {
+          margin-right: 0px !important;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &-item {
+      position: relative;
+      float: left;
+      width: 35px;
+      height: 35px;
+      margin-top: 10px;
+      margin-right: 10px;
+      &:not(:nth-child(4n)) {
+        // margin-right: 10px;
+      }
+      &-dialog {
+        position: absolute;
+        top: 41px;
+        left: -45px;
+        z-index: 2;
+        width: 400px;
+        padding: 11px 25px 25px;
+        background: #303a45;
+        border-radius: 4px;
+        color: #b1b7bf;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 55px;
+          width: 16px;
+          height: 6px;
+        }
+        &::before {
+          top: -6px;
+          background: url(./assets/footer/follow/follow-arrow-up.png) 0 0 no-repeat;
+        }
+        &::after {
+          display: none;
+          bottom: -6px;
+          background: url(./assets/footer/follow/follow-arrow-down.png) 0 0 no-repeat;
+        }
+        &-link {
+          float: left;
+          width: 50%;
+          line-height: 35px;
+          font-size: 12px;
+          a {
+            color: #b1b7bf;
+            &:hover {
+              text-decoration: underline;
+              color: #fff;
+            }
+          }
+        }
+      }
+      &-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        &.is-twitter {
+          background-image: url(./assets/footer/follow/hover/twitter.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/twitter.png);
+          }
+        }
+        &.is-telegram {
+          background-image: url(./assets/footer/follow/hover/telegram.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/telegram.png);
+          }
+        }
+        &.is-kakao {
+          background-image: url(./assets/footer/follow/hover/kakao.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/kakao.png);
+          }
+        }
+        &.is-discord {
+          background-image: url(./assets/footer/follow/hover/discord.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/discord.png);
+          }
+        }
+        &.is-youtube {
+          background-image: url(./assets/footer/follow/hover/youtube.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/youtube.png);
+          }
+        }
+        &.is-linkedin {
+          background-image: url(./assets/footer/follow/hover/linkedin.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/linkedin.png);
+          }
+        }
+        &.is-medium {
+          background-image: url(./assets/footer/follow/hover/medium.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/medium.png);
+          }
+        }
+        &.is-reddit {
+          background-image: url(./assets/footer/follow/hover/reddit.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/reddit.png);
+          }
+        }
+        &.is-instagram {
+          background-image: url(./assets/footer/follow/hover/instagram.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/instagram.png);
+          }
+        }
+        &.is-facebook {
+          background-image: url(./assets/footer/follow/hover/facebook.png);
+          &:hover {
+            background-image: url(./assets/footer/follow/hover/facebook.png);
+          }
+        }        
+        &.is-twitter,
+        &.is-telegram,
+        &.is-kakao,
+        &.is-discord,
+        &.is-youtube,
+        &.is-linkedin,
+        &.is-medium,
+        &.is-reddit,
+        &.is-facebook,
+        &.is-instagram {
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    &-specialitem {
+      display: none;
+    }
+  }
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    &-col {
+      width: 50%;
+      margin-bottom: 40px;
+      &-title {
+        font-size: 20px;
+        line-height: 26px;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      &-item {
+        font-size: 12px;
+        line-height: 25px;
+        a {
+          color: #b1b7bf;
+          &:hover {
+            text-decoration: underline;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &-copyright {
+    color: #9999a2;
+    font-size: 12px;
+    text-align: center;
+    height: 35px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .g-footer {
+    &-wrap {
+      padding: 60px 0 0 0;
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-links {
+      &-col {
+        width: 200px;
+      }
+    }
+    &-follow {
+      order: 1;
+      &-item {
+        &-dialog {
+          top: auto;
+          bottom: 41px;
+          left: 50%;
+          transform: translateX(-50%);
+          &::before,
+          &::after {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          &::before {
+            display: none;
+          }
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

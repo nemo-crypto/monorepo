@@ -1,0 +1,18 @@
+{
+  "name": "@xatom/iui",
+  "version": "1.0.25-beta.1",
+  "description": "",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://github.com/nemo-crypto/monorepo"
+  },
+  "dependencies": {
+    "react-responsive": "8.2.0",
+    "qrcode.react": "3.1.0",
+    "copy-to-clipboard": "3.3.3"
+  }
+}

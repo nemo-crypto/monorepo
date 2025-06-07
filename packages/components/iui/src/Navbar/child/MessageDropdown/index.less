@@ -1,0 +1,71 @@
+.create-iui-navbar-message(
+  @T1: '';
+  @T2: '';
+  @F1: '';
+  @F3: '';
+) {
+  .iui-navbar-message {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 12px;
+
+    &-trigger {
+      position: relative;
+      cursor: pointer;
+
+      &-icon {
+        font-size: 24px !important;
+        color: @T1;
+      }
+
+      &-badge {
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: @F3;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .iui-navbar-message-overlay {
+    padding: 12px;
+    
+    .iui-navbar-common-item-row {
+      &:hover {
+        border-radius: 4px;
+      }
+      
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+
+    &-text {
+      &-item {
+        margin-top: 4px;
+        color: @T2;
+
+        &-detail {
+          margin-left: 16px;
+          color: @F1;
+          font-size: 12px;
+        }
+      }
+    }
+
+    &-badge {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: @F3;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: 4px;
+    }
+  }
+}

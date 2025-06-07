@@ -1,0 +1,68 @@
+.no-scrollbar() {
+  ::-webkit-scrollbar {
+    width: 6px !important;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent !important;
+    // display: none !important;
+    // background: red !important;
+
+  }
+}
+
+.create-scrollbar-types() {
+  .pc-scrollbar-thumb {
+    background: @bg-scrollbar;
+    border-radius: 6px;
+    width: 6px;
+  }
+
+  // .ant-table-body {
+  //   .no-scrollbar();
+  // }
+
+  // .ant-table-header.ant-table-hide-scrollbar {
+  //   .no-scrollbar();
+  // }
+  ::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 6px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 6px;
+    // position: relative;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 6px;
+    background: @bg-scrollbar;
+
+    // background: blue;
+    &:hover {
+      cursor: move;
+    }
+  }
+
+  ::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    background: transparent !important;
+    display: none !important;
+    // background: blue;
+
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent !important;
+    display: none !important;
+  }
+
+}
+
+.ant-select-dropdown {
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+}

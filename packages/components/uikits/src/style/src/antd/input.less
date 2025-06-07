@@ -1,0 +1,39 @@
+// https: //github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+// theme-config
+// @input-height-base: 44px;
+
+
+.create-antd-input(@bg: ''; @bc: ''; @brand-primary: ''; @br: ''; ) {
+  .ant-input {
+    border: 1px solid @bc ;
+    border-radius: @br ;
+    color: @fc-grey ;
+    background: @bg;
+
+    &:focus,
+    &:hover {
+      border-color: @brand-primary  !important;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .ant-input-group-addon {
+    background: @bg  !important;
+    border-color: @bc  !important;
+  }
+
+  .input-reset {
+    .ant-input {
+      border-color: transparent !important;
+      background: transparent !important;
+    }
+  }
+
+  .ant-input-group-addon {
+    border-radius: @br;
+    border-color: @bc  !important;
+    padding: 7.5px;
+  }
+
+}

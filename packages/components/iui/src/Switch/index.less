@@ -1,0 +1,61 @@
+.create-iui-switch(
+  @C1: '';
+  @F1: '';
+  @F2: '';
+) {
+  .iui-switch {
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    background: @C1;
+    min-width: 36px;
+
+    // default
+    &::after {
+      width: 12px;
+      height: 12px;
+      top: 4px;
+      left: 4px;
+      border-radius: 12px;
+    }
+
+    &.ant-switch-checked {
+      background: @F2;
+
+      &::after {
+        left: 100%;
+        margin-left: -4px;
+      }
+    }
+    
+    &.ant-switch-disabled {
+      opacity: 0.3;
+    }
+    
+    // type - primary
+    &-primary {
+      &.ant-switch-checked {
+        background: @F1;
+      }
+    }
+
+    // size - small
+    &.ant-switch-small {
+      min-width: 32px;
+      height: 16px;
+      line-height: 16px;
+
+      &::after {
+        top: 2px;
+        left: 2px;
+      }
+
+      &.ant-switch-checked {
+        &::after {
+          left: 100%;
+          margin-left: -2px;
+        }
+      }
+    }
+  }
+}

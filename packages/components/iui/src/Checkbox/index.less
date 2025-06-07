@@ -1,0 +1,52 @@
+.create-iui-checkbox(@T2: '';
+  @T3: '';
+  @Bg4: '';
+  @F1: '';
+
+) {
+  .iui-checkbox {
+    font-size: 12px;
+
+    .ant-checkbox {
+      font-size: 12px;
+
+      &-input,
+      &-inner {
+        width: 12px !important;
+        height: 12px !important;
+      }
+
+      &-inner {
+        background: @Bg4 !important;
+        border: 1px solid @T3;
+
+        &::after {
+          width: 5px;
+          height: 7px;
+          border-width: 1.5px;
+        }
+      }
+
+      &+span {
+        padding: 0 0 0 8px !important;
+      }
+
+      &:hover .ant-checkbox-inner {
+        border-color: @F1;
+      }
+
+      &-checked .ant-checkbox-inner {
+        border-color: @F1 !important;
+        background-color: @F1 !important;
+      }
+
+      &-disabled .ant-checkbox-inner {
+        border-color: @T2 !important;
+        background-color: @Bg4 !important;
+        &::after {
+          border-color: @T2 !important;
+        }
+      }
+    }
+  }
+}

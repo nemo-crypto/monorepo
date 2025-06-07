@@ -1,0 +1,80 @@
+.ui-router-404 {
+  margin: auto;
+  text-align: center;
+  background: #fff;
+  height: calc(100vh - 64px);
+  &-icon {
+    width: 240px;
+    height: 232px;
+    margin-bottom: 20px;
+    margin-top: 100px;
+  }
+
+  &-text {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+
+  }
+
+  &-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: rgba(112, 122, 138, 1);
+    max-width: 486px;
+    padding-top: 26px;
+    padding-bottom: 56px;
+    margin: auto;
+  }
+
+  &-btn {
+    box-shadow: 0px 16px 18px 0px rgba(0, 0, 0, 0.08);
+    background: rgba(49, 105, 255, 1);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    margin: auto;
+    cursor: pointer;
+    padding: 20px 50px;
+  }
+
+  &-btn:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .ui-router-404 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ui-router-404 {
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+
+    &-icon {
+      margin-bottom: 0;
+      margin-top: 80px;
+    }
+
+    &-text {
+      font-size: 25px;
+    }
+
+    &-desc {
+      font-size: 14px;
+      padding-top: 12px;
+      padding-bottom: 45px;
+    }
+
+  }
+}

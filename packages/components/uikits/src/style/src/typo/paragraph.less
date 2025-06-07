@@ -1,0 +1,21 @@
+.paragraph-type(@type: ''; @size: 14px; @color: ''; @bold: normal; @lh: 1.5) {
+  .typo-paragraph-@{type} {
+    line-height: @lh;
+    font-size: @size ;
+    color: @color;
+    font-weight: @bold;
+  }
+
+  &:not(body) {
+    .typo-paragraph-@{type} {
+      color: @color  !important;
+    }
+  }
+}
+
+.create-paragraph-types() {
+  .paragraph-type(@type: ~"1"; @size: @fs-text1; @color: @fc-grey; @lh: @lh-paragraph1);
+  .paragraph-type(@type: ~"1-light"; @size: @fs-text1; @color: @fc-grey-light; @lh: @lh-paragraph1);
+  .paragraph-type(@type: ~"1-lighter"; @size: @fs-text1; @color: @fc-grey-lighter; @lh: @lh-paragraph1);
+  .paragraph-type(@type: ~"2"; @size: @fs-text2; @color: @fc-grey; @lh: @lh-paragraph2);
+}

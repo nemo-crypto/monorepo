@@ -1,0 +1,63 @@
+// https: //github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
+// theme-config
+// @input-height-base: 44px;
+.ant-select-dropdown-menu-item {
+  padding: 0px 12px;
+  line-height: 1;
+  min-height: 40px;
+  .center-v();
+}
+
+.create-antd-select(@brand-primary: ""; @brand-primary-light: ""; ) {
+  .ant-select-selection {
+    border: 1px solid @bc-input ;
+    color: @fc-grey ;
+    background: @bg-input;
+
+    &:focus,
+    &:hover {
+      border-color: @brand-primary  !important;
+      box-shadow: none;
+      outline: none;
+    }
+
+    .ant-select-selection__placeholder {
+      color: @fc-grey-lighter ;
+      font-size: 12px;
+    }
+  }
+
+  .ant-select-dropdown-menu-item-active,
+  .ant-select-dropdown-menu-item-active:hover {
+    background: @brand-primary-light  !important;
+
+  }
+
+  &:not(body) {
+    .ant-select-selection {
+      border: 1px solid @bc-input ;
+      color: @fc-grey ;
+      background: @bg-input;
+
+      .status {
+        display: none;
+      }
+
+      &:focus,
+      &:hover {
+        border-color: @brand-primary  !important;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    .ant-select-selection__placeholder {
+      color: @fc-grey-lighter  !important;
+    }
+
+    .ant-select-enabled .status {
+      display: none;
+    }
+  }
+
+}

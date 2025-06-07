@@ -1,0 +1,127 @@
+.table-list {
+  .ant-table-placeholder {
+    padding: 10px;
+  }
+
+  .empty-table-list {
+    padding-top: 30px;
+  }
+}
+
+.create-antd-table() {
+  .ant-table-wrapper {
+    &.table-list {
+      .ant-table-fixed-header>.ant-table-content>.ant-table-scroll>.ant-table-body {
+        background: transparent !important;
+      }
+
+      // antd 3.24.0升级删除此样式引发布局问题 在此修复
+      .ant-table-scroll table {
+        width: auto;
+      }
+
+      // 右侧固定相关
+      .ant-table-scroll-position-right {
+        .ant-table-fixed-right {
+          table {
+            background: transparent !important;
+          }
+        }
+      }
+
+      // 右侧固定相关
+      .ant-table-fixed-right {
+        table {
+          background: @bg-card  !important;
+        }
+         .ant-table-tbody>tr:hover {
+          background: transparent  !important;
+        }
+
+        .ant-table-tbody>tr>td {
+          padding-left: 10px !important;
+          border-bottom: 1px solid transparent !important;
+        }
+
+        .ant-table-thead>tr>th {
+          padding-left: 10px !important;
+        }
+
+      }
+
+      .ant-table-thead>tr>th {
+        font-weight: normal;
+        color: @fc-grey-lighter;
+        font-size: 12px;
+        padding: 5px 5px 5px;
+        // border-bottom: 1px solid @bc-grey-light;
+        .text-nowrap;
+
+        &:first-child {
+          padding-left: 0px;
+          text-align: left;
+        }
+
+        &:last-child {
+          padding-right: 0px;
+          text-align: right;
+        }
+      }
+
+      .ant-table-tbody>tr {
+        &:hover {
+          background: @bg-list-hover  !important;
+        }
+      }
+
+      .ant-table-fixed-columns-in-body {
+        visibility: visible;
+        color: transparent;
+
+        * {
+          color: transparent;
+          visibility: hidden;
+        }
+      }
+
+      .ant-table-tbody>tr>td {
+        // font-weight: normal;
+        color: @fc-grey;
+        font-size: 12px;
+        padding: 0px 5px;
+        height: 46px;
+        border-bottom: 1px solid @bc-grey;
+        .text-truncate;
+
+        &:first-child {
+          text-align: left;
+          padding-left: 0px;
+        }
+
+        &:last-child {
+          padding-right: 0px;
+          text-align: right;
+        }
+
+      }
+
+      &.no-border {
+        .ant-table-tbody>tr>td {
+          border-bottom: 1px solid transparent;
+        }
+      }
+
+      .ant-table-placeholder {
+        background: transparent;
+
+        .ant-empty-description {
+          color: @fc-grey-lighter;
+        }
+      }
+
+      .ant-spin-blur {
+        opacity: 0;
+      }
+    }
+  }
+}

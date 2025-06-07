@@ -1,0 +1,21 @@
+.title-type(@type: 1; @size: 14px; @color: #000; @bold: normal;@hover:@color;) {
+  .typo-title-@{type} {
+    line-height: 1.2;
+    font-size: @size ;
+    color: @color;
+    &.cursor-pointer:hover{
+      color:@hover; 
+    }
+    // font-weight: @bold;
+    &.fc-inherit {
+      color: inherit;
+    }
+
+    &.typo-disabled {
+      color: fade(@color, 65%) !important;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.create-title-types() {}

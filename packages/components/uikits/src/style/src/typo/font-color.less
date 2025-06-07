@@ -1,0 +1,53 @@
+.fc-type(@type: ''; @color: ''; @hover:inherit) {
+  .fc-@{type} {
+    color: @color;
+    &.cursor-pointer:hover{
+      color:@hover;
+    }
+  }
+
+  .hover-fc-@{type}:hover {
+    color: @color  !important;
+  }
+
+  .active-fc-@{type}.active {
+    color: @color  !important;
+  }
+
+  // &:not(body) {
+  //   .fc-@{type} {
+  //     color: @color ;
+  //   }
+
+  //   .hover-fc-@{type}:hover {
+  //     color: @color ;
+  //   }
+
+  //   .active-fc-@{type}.active {
+  //     color: @color ;
+  //   }
+  // }
+}
+
+.fc-inherit {
+  color: inherit !important;
+}
+
+.fc-white {
+  color: #fff !important;
+}
+
+.hover-fc-white:hover {
+  color: #fff !important;
+}
+.hover-fc-black:hover {
+  color: #000 !important;
+}
+
+.fc-black {
+  color: #000 !important;
+}
+
+.fc-navbar-grey {
+  color: #25282b !important;
+}

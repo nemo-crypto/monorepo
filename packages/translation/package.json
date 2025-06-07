@@ -1,0 +1,15 @@
+{
+  "name": "@xatom/locales",
+  "version": "0.1.131",
+  "description": "",
+  "author": "https://github.com/nemo-crypto",
+  "license": "ISC",
+  "main": "index.js",
+  "files": [
+    "locales",
+    "index.js"
+  ],
+  "publishConfig": {
+    "registry": "https://github.com/nemo-crypto/monorepo"
+  }
+}

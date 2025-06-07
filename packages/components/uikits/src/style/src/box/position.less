@@ -1,0 +1,114 @@
+// 九个位置点
+// top-left
+// top-middle
+// top-right
+// middle-left
+// middle-middle
+// middle-right
+// bottom-left
+// bottom-middle
+// bottom-right
+// 4个常见布局
+// 铺满顶部
+// 铺满底部
+// 铺满左边
+// 铺满右边
+// 铺满全部
+
+// 待完成 遇到 absolute
+// - 自身必须设置 zindex
+// - 父级必须 relative
+// - 兄弟必须 relative，必须设置 zindex
+// 参考：footer-paritcles-bg
+
+.abs-hidden,
+.abs-none,
+.abs-preload {
+  position: 'absolute';
+  height: 0;
+  width: 0;
+}
+
+.abs-cover {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.abs-top {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+}
+
+.abs-bottom {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+}
+
+.abs-left {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: auto;
+}
+
+.abs-right {
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: auto;
+}
+
+.abs-left-top,.abs-top-left{
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: auto;
+}
+
+.abs-right-top,.abs-top-right{
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.abs-right-bottom,.abs-bottom-right{
+  position: absolute !important;
+  right: 0;
+  bottom: 0;
+  width: auto;
+}
+
+.abs-left-bottom,.abs-bottom-left{
+  position: absolute !important;
+  left: 0;
+  bottom: 0;
+  width: auto;
+}
+
+.abs-center,.abs-center-center {
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.direction-ltr {
+  direction: ltr;
+}
+.direction-rtl {
+  direction: rtl;
+}

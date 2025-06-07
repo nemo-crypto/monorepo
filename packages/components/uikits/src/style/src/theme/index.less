@@ -1,0 +1,270 @@
+@import './brand.less';
+.create-theme ( // brand
+  @brand-primary: #3169ff;
+  @brand-secondary: blue; // TODO
+  @brand-up: #3cbc98;
+  @brand-down: #e3595d;
+  @brand-success: #4db16e;
+  @brand-error: #ff5656;
+  @brand-warn: #f99c03;
+  @brand-info: blue; // TODO
+
+  // brand-light
+  @brand-primary-light: fade(@brand-primary, 20%);
+  @brand-secondary-light: fade(@brand-secondary, 15%);
+  @brand-up-light: fade(@brand-up, 15%);
+  @brand-down-light: fade(@brand-down, 15%);
+  @brand-success-light: fade(@brand-success, 15%);
+  @brand-error-light: fade(@brand-error, 15%);
+  @brand-warn-light: fade(@brand-warn, 15%);
+  @brand-info-light: fade(@brand-info, 15%);
+  // border-radius
+  @br-main: 4px;
+  // bg
+  @bg-body: #f2f3f8;
+  @bg-card: #fff; // TODO
+  @bg-card-header: #fff; // TODO
+  @bg-card-body: @brand-primary-light; // TODO
+  @bg-modal: @bg-card;
+  @bg-navbar: #fff; // TODO
+  @bg-navbar-dropdown: #fff; // TODO
+  @bg-input: transparent;
+  @bg-footer: transparent;
+  @bg-layer: #fff;
+  @bg-tooltip: #fff;
+  @bg-loading: rgba(0, 0, 0, 0.4);
+  @bg-table-hover: rgba(0, 0, 0, 0.07);
+  @bg-list-hover: rgba(0, 0, 0, 0.07);
+  @bg-scrollbar: rgba(0, 0, 0, 0.1);
+  @bg-grey: #202125;
+  @bg-grey-light: #40434A;
+  @bg-disabled: fade(#303238, 15%);
+  @bg-button: #303238;
+  @bg-button-disabled: #273869;
+  @bg-panel: rgba(0, 0, 0, 0.03);
+  @bg-panel-body: #F5F7FB;
+  @bg-card-item-hover: rgba(0, 0, 0, 0.03); //卡片item的hover背景色
+   // bc
+  @bc-grey: #f2f2f2;
+  @bc-grey-light: #f2f2f2; // TODO
+  @bc-grey-lighter: #f2f2f2; // TODO
+  @bc-input: #d8dae6;
+  // fc
+  @fc-bw: #000;
+  @fc-grey-dark: #000;
+  @fc-grey: #000;
+  @fc-grey-light: #707a8a;
+  @fc-grey-lighter: #707a8a;
+  @fc-grey-lightest: #707a8a;
+  @fc-icon: @fc-grey;
+  // navbar
+  @fc-typo-navbar: #25282b;
+  @fc-typo-navbar-hover: @brand-primary;
+  @fc-typo-navbar-active: @brand-primary;
+
+) {
+
+  // .create-typo-types();
+  // fc
+  .fc-type(@type: ~"bw"; @color: @fc-bw;);
+  .fc-type(@type: ~"grey-dark"; @color: @fc-grey-dark; ); // 新版本已废弃，暂时保留以兼容老版本
+  .fc-type(@type: ~"grey"; @color: @fc-grey; @hover:@brand-primary;);
+  .fc-type(@type: ~"grey-light"; @color: @fc-grey-light; @hover:@fc-grey-light; );
+  .fc-type(@type: ~"grey-lighter"; @color: @fc-grey-lighter; @hover:@fc-grey-lighter;);
+  .fc-type(@type: ~"grey-lightest"; @color: @fc-grey-lightest; @hover:@fc-grey-lightest;);
+  .fc-type(@type: ~"primary"; @color: @brand-primary; @hover:lighten(@brand-primary,10%); );
+  .fc-type(@type: ~"up"; @color: @brand-up; @hover:@brand-up;);
+  .fc-type(@type: ~"down"; @color: @brand-down; @hover:@brand-down;);
+  .fc-type(@type: ~"success"; @color: @brand-success; @hover:@brand-success;);
+  .fc-type(@type: ~"error"; @color: @brand-error; @hover:@brand-error;);
+  .fc-type(@type: ~"warn"; @color: @brand-warn; @hover:@brand-warn;);
+  .fc-type(@type: ~"info"; @color: @brand-info; @hover:@brand-info;);
+  .fc-type(@type: ~"icon"; @color: @fc-icon; );
+
+  .fc-type(@type: ~"page-light"; @color: '#1e2329'; @hover: '#1e2329';);
+  .fc-type(@type: ~"page-dark"; @color: '#ffffff'; @hover: '#ffffff';);
+
+  // text
+  .text-type(@type: ~"1"; @size: @fs-text1; @color: @fc-grey;@hover:@brand-primary; );
+  .text-type(@type: ~"1-light"; @size: @fs-text1; @color: @fc-grey-light;@hover:@fc-grey; );
+  .text-type(@type: ~"1-lighter"; @size: @fs-text1; @color: @fc-grey-lighter;@hover:@fc-grey; );
+  .text-type(@type: ~"1-primary"; @size: @fs-text1; @color: @brand-primary;@hover:lighten(@brand-primary,10%); );
+  .text-type(@type: ~"1-up"; @size: @fs-text1; @color: @brand-up; );
+  .text-type(@type: ~"1-down"; @size: @fs-text1; @color: @brand-down; );
+  .text-type(@type: ~"1-success"; @size: @fs-text1; @color: @brand-success; @hover:lighten(@brand-success,10%););
+  .text-type(@type: ~"1-error"; @size: @fs-text1; @color: @brand-error; @hover:lighten(@brand-error,10%););
+  .text-type(@type: ~"1-warn"; @size: @fs-text1; @color: @brand-warn;@hover:lighten(@brand-warn,10%); );
+  .text-type(@type: ~"1-info"; @size: @fs-text1; @color: @brand-info;@hover:lighten(@brand-info,10%); );
+  .text-type(@type: ~"1-icon"; @size: @fs-text1; @color: @fc-icon; );
+  .text-type(@type: ~"2"; @size: @fs-text2; @color: @fc-grey;@hover:@brand-primary; );
+  .text-type(@type: ~"2-light"; @size: @fs-text2; @color: @fc-grey-light;@hover:@fc-grey; );
+  .text-type(@type: ~"2-lighter"; @size: @fs-text2; @color: @fc-grey-lighter;@hover:@fc-grey; );
+  .text-type(@type: ~"2-primary"; @size: @fs-text2; @color: @brand-primary;@hover:lighten(@brand-primary,10%); );
+  .text-type(@type: ~"2-up"; @size: @fs-text2; @color: @brand-up; );
+  .text-type(@type: ~"2-down"; @size: @fs-text2; @color: @brand-down; );
+  .text-type(@type: ~"2-success"; @size: @fs-text2; @color: @brand-success; @hover:lighten(@brand-success,10%););
+  .text-type(@type: ~"2-error"; @size: @fs-text2; @color: @brand-error; @hover:lighten(@brand-error,10%););
+  .text-type(@type: ~"2-warn"; @size: @fs-text2; @color: @brand-warn;@hover:lighten(@brand-warn,10%); );
+  .text-type(@type: ~"2-info"; @size: @fs-text2; @color: @brand-info;@hover:lighten(@brand-info,10%); );
+  .text-type(@type: ~"2-icon"; @size: @fs-text2; @color: @fc-icon; );
+
+  // title
+  .title-type(@type: ~"1"; @size: @fs-title1; @color: @fc-grey;@hover:@brand-primary;);
+  .title-type(@type: ~"1-light"; @size: @fs-title1; @color: @fc-grey-light; @hover:@fc-grey;);
+  .title-type(@type: ~"1-primary"; @size: @fs-title1; @color: @brand-primary; @hover:lighten(@brand-primary,10%););
+  .title-type(@type: ~"1-up"; @size: @fs-title1; @color: @brand-up; );
+  .title-type(@type: ~"1-down"; @size: @fs-title1; @color: @brand-down; );
+  .title-type(@type: ~"1-success"; @size: @fs-title1; @color: @brand-success; @hover:lighten(@brand-success,10%););
+  .title-type(@type: ~"1-error"; @size: @fs-title1; @color: @brand-error; @hover:lighten(@brand-success,10%););
+
+  .title-type(@type: ~"2"; @size: @fs-title2; @color: @fc-grey;@hover:@brand-primary; );
+  .title-type(@type: ~"2-light"; @size: @fs-title2; @color: @fc-grey-light; @hover:@fc-grey;);
+  .title-type(@type: ~"2-primary"; @size: @fs-title2; @color: @brand-primary; @hover:lighten(@brand-primary,10%););
+  .title-type(@type: ~"2-up"; @size: @fs-title2; @color: @brand-up; );
+  .title-type(@type: ~"2-down"; @size: @fs-title2; @color: @brand-down; );
+  .title-type(@type: ~"2-success"; @size: @fs-title2; @color: @brand-success; @hover:lighten(@brand-success,10%););
+  .title-type(@type: ~"2-error"; @size: @fs-title2; @color: @brand-error; @hover:lighten(@brand-success,10%););
+  .title-type(@type: ~"3"; @size: @fs-title3; @color: @fc-grey;@hover:@brand-primary; );
+  // placeholder
+  .create-placeholder-types();
+  // background
+  .bg-type(@type: ~"primary"; @color: @brand-primary; );
+  .bg-type(@type: ~"secondary"; @color: @brand-secondary; );
+  .bg-type(@type: ~"up"; @color: @brand-up; );
+  .bg-type(@type: ~"down"; @color: @brand-down; );
+  .bg-type(@type: ~"success"; @color: @brand-success; );
+  .bg-type(@type: ~"error"; @color: @brand-error; );
+  .bg-type(@type: ~"warn"; @color: @brand-warn; );
+  .bg-type(@type: ~"info"; @color: @brand-info; );
+  .bg-type(@type: ~"primary-light"; @color: @brand-primary-light; );
+  .bg-type(@type: ~"secondary-light"; @color: @brand-secondary-light; );
+  .bg-type(@type: ~"up-light"; @color: @brand-up-light; );
+  .bg-type(@type: ~"down-light"; @color: @brand-down-light; );
+  .bg-type(@type: ~"success-light"; @color: @brand-success-light; );
+  .bg-type(@type: ~"error-light"; @color: @brand-error-light; );
+  .bg-type(@type: ~"warn-light"; @color: @brand-warn-light; );
+  .bg-type(@type: ~"info-light"; @color: @brand-info-light; );
+  .bg-type(@type: ~"body"; @color: @bg-body; );
+  .bg-type(@type: ~"layer"; @color: @bg-layer; );
+  .bg-type(@type: ~"card"; @color: @bg-card; );
+  .bg-type(@type: ~"card-body"; @color: @bg-card-body; );
+  .bg-type(@type: ~"card-header"; @color: @bg-card-header; );
+  .bg-type(@type: ~"navbar"; @color: @bg-navbar; );
+  .bg-type(@type: ~"navbar-dark"; @color: #101621; );
+  .bg-type(@type: ~"navbar-dropdown"; @color: @bg-navbar-dropdown; );
+  .bg-type(@type: ~"footer"; @color: @bg-footer; );
+  .bg-type(@type: ~"input"; @color: @bg-input; );
+  .bg-type(@type: ~"table-hover"; @color: @bg-table-hover; ); // 即将废弃，请勿使用
+  .bg-type(@type: ~"list-hover"; @color: @bg-list-hover; );
+  .bg-type(@type: ~"tooltip"; @color: @bg-tooltip; );
+  .bg-type(@type: ~"grey"; @color: @bg-grey; );
+  .bg-type(@type: ~"grey-light"; @color: @bg-grey-light; );
+  .bg-type(@type: ~"disabled"; @color: @bg-disabled; );
+  .bg-type(@type: ~"button"; @color: @bg-button; );
+  .bg-type(@type: ~"button-disabled"; @color: @bg-button-disabled; );
+  .bg-type(@type: ~"panel-body"; @color: @bg-panel-body; );
+  .bg-type(@type: ~"panel"; @color: @bg-panel; );
+
+  // bs
+  .border-radius-type(@type: ~'main'; @size: @br-main);
+  .border-radius-type(@type: ~'1'; @size: 2px);
+  .border-radius-type(@type: ~'2'; @size: 4px);
+  .border-radius-type(@type: ~'3'; @size: 6px);
+  .border-radius-type(@type: ~'4'; @size: 8px);
+  .border-radius-type(@type: ~'8'; @size: 16px);
+  .border-radius-type(@type: ~'0'; @size: 0);
+  //bc
+  .border-color-type(@type: ~"transparent"; @color: "transparent"; );
+  .border-color-type(@type: ~"grey"; @color: @bc-grey; );
+  .border-color-type(@type: ~"grey-light"; @color: @bc-grey-light; );
+  .border-color-type(@type: ~"grey-lighter"; @color: @bc-grey-lighter; );
+  .border-color-type(@type: ~"primary"; @color: @brand-primary; );
+  .border-color-type(@type: ~"up"; @color: @brand-up; );
+  .border-color-type(@type: ~"down"; @color: @brand-down; );
+  .border-color-type(@type: ~"success"; @color: @brand-success; );
+  .border-color-type(@type: ~"error"; @color: @brand-error; );
+  .border-color-type(@type: ~"warn"; @color: @brand-warn; );
+  .border-color-type(@type: ~"info"; @color: @brand-info; );
+  .border-color-type(@type: ~"input"; @color: @bc-input; );
+  // bt
+  .border-type(@type: ~"grey"; @color: @bc-grey; );
+  .border-type(@type: ~"grey-light"; @color: @bc-grey-light; );
+  .border-type(@type: ~"grey-lighter"; @color: @bc-grey-lighter; );
+  .border-type(@type: ~"primary"; @color: @brand-primary; );
+  .border-type(@type: ~"up"; @color: @brand-up; );
+  .border-type(@type: ~"down"; @color: @brand-down; );
+  .border-type(@type: ~"success"; @color: @brand-success; );
+  .border-type(@type: ~"error"; @color: @brand-error; );
+  .border-type(@type: ~"warn"; @color: @brand-warn; );
+  .border-type(@type: ~"info"; @color: @brand-info; );
+  .border-type(@type: ~"input"; @color: @bc-input; );
+  // box-modal
+  .create-custom-box-types();
+  // box-scroll
+  .create-scrollbar-types();
+
+  //==========================================
+  // .create-antd();
+  //==========================================
+
+  // antd-navbar
+  .create-antd-navbar(@fc-typo-navbar: @fc-typo-navbar; @fc-typo-navbar-hover: @fc-typo-navbar-hover; @fc-typo-navbar-active: @fc-typo-navbar-active; @brand-primary-light: @brand-primary-light; @brand-primary: @brand-primary; );
+  // antd-button
+  .button-type(@type: ~"primary"; @bg-color: @brand-primary; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"success"; @bg-color: @brand-success; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"up"; @bg-color: @brand-up; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"down"; @bg-color: @brand-down; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"error"; @bg-color: @brand-error; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"warn"; @bg-color: @brand-warn; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"info"; @bg-color: @brand-info; @fc-color: #fff; @br: @br-main; );
+  .button-type(@type: ~"primary-light"; @bg-color: @brand-primary-light; @fc-color: @brand-primary; @br: @br-main; );
+  .button-type(@type: ~"success-light"; @bg-color: @brand-success-light; @fc-color: @brand-success; @br: @br-main; );
+  .button-type(@type: ~"up-light"; @bg-color: @brand-up-light; @fc-color: @brand-up; @br: @br-main; );
+  .button-type(@type: ~"down-light"; @bg-color: @brand-down-light; @fc-color: @brand-down; @br: @br-main; );
+  .button-type(@type: ~"error-light"; @bg-color: @brand-error-light; @fc-color: @brand-error; @br: @br-main; );
+  .button-type(@type: ~"warn-light"; @bg-color: @brand-warn-light; @fc-color: @brand-warn; @br: @br-main; );
+  .button-type(@type: ~"info-light"; @bg-color: @brand-info-light; @fc-color: @brand-info; @br: @br-main; );
+  .button-type(@type: ~"grey"; @bg-color: transparent; @fc-color: @fc-grey-light; @border-color: @bc-grey; @br: @br-main; );
+  .button-type(@type: ~"input"; @bg-color: @bg-input; @fc-color: @fc-grey-light; @border-color: @bg-input; @br: @br-main; );
+  .button-type(@type: ~"page-light"; @bg-color: #f2f3f3; @fc-color: #1e2329; @border-color: #f2f3f3; @br: 6px;);
+  .button-type(@type: ~"page-dark"; @bg-color: rgba(177, 183, 191, 0.15); @fc-color: #ffffff; @border-color: rgba(177, 183, 191, 0.15); @br: 6px;);
+
+
+  // antd-tag
+  .tag-type(@type: ~"primary"; @bg: @brand-primary; @br: @br-main; );
+  .tag-type(@type: ~"up"; @bg: @brand-up; @br: @br-main; );
+  .tag-type(@type: ~"down"; @bg: @brand-down; @br: @br-main; );
+  .tag-type(@type: ~"success"; @bg: @brand-success; @br: @br-main; );
+  .tag-type(@type: ~"error"; @bg: @brand-error; @br: @br-main; );
+  .tag-type(@type: ~"warn"; @bg: @brand-warn; @br: @br-main; );
+  .tag-type(@type: ~"info"; @bg: @brand-info; @br: @br-main; );
+  .tag-light-type(@type: ~"primary-light"; @bg: @brand-primary-light; @bc: @brand-primary; @br: @br-main; );
+  .tag-light-type(@type: ~"up-light"; @bg: @brand-up-light; @bc: @brand-up; @br: @br-main; );
+  .tag-light-type(@type: ~"down-light"; @bg: @brand-down-light; @bc: @brand-down; @br: @br-main; );
+  .tag-light-type(@type: ~"success-light"; @bg: @brand-success-light; @bc: @brand-success; @br: @br-main; );
+  .tag-light-type(@type: ~"error-light"; @bg: @brand-error-light; @bc: @brand-error; @br: @br-main; );
+  .tag-light-type(@type: ~"warn-light"; @bg: @brand-warn-light; @bc: @brand-warn; @br: @br-main; );
+  .tag-light-type(@type: ~"info-light"; @bg: @brand-info-light; @bc: @brand-info; @br: @br-main; );
+  // antd-slider
+  .create-antd-slider(@brand-primary: @brand-primary; );
+  .slider-type(@type: ~'up'; @color: @brand-up; );
+  .slider-type(@type: ~'down'; @color: @brand-down; );
+  // antd-input
+  .create-antd-input(@bg: @bg-input; @bc: @bc-input; @brand-primary: @brand-primary; @br: @br-main; );
+  .create-antd-checkbox(@brand-primary: @brand-primary; );
+  // antd-table
+  .create-antd-table();
+  .create-antd-icon();
+  .create-antd-form();
+  .create-antd-select(@brand-primary: @brand-primary; @brand-primary-light: @brand-primary-light; );
+  .create-antd-spin(@brand-primary: @brand-primary; );
+  .create-antd-tooltip();
+  .create-antd-tooltip(@type: ~"primary"; @bg: @brand-primary; @fc: #fff; );
+  .create-antd-tooltip(@type: ~"up"; @bg: @brand-up; @fc: #fff; );
+  .create-antd-tooltip(@type: ~"down"; @bg: @brand-down; @fc: #fff; );
+  .create-antd-tooltip(@type: ~"info"; @bg: @brand-info; @fc: #fff; );
+  .create-antd-tooltip(@type: ~"warn"; @bg: @brand-warn; @fc: #fff; );
+  .create-default-tooltip(@bg: @bg-tooltip; @fc: @fc-grey; );
+  .create-antd-pagination();
+  .create-antd-modal();
+}

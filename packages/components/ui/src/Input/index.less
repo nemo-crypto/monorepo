@@ -1,0 +1,39 @@
+.ui-input,
+.ui-input .ant-input {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  border-radius: 6px !important;
+  color: #000 !important;
+
+  &.error {
+    border-color: #FC3C56 !important;
+  }
+
+  &.ant-input-sm {
+    height: 40px;
+  }
+
+  &.ant-input-lg {
+    height: 48px;
+  }
+}
+
+
+.ui-input,
+.ui-input .ant-input {
+  &::placeholder {
+    color: #C1C1C1 !important;
+    font-size: 14px !important;
+  }
+
+  &.ant-input-sm {
+    &::placeholder {
+      font-size: 12px !important;
+    }
+  }
+
+  &.ant-input-lg {
+    &::placeholder {
+      font-size: 16px !important;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.create-iui-nickName(
+  @T1: '';
+  @T2: '';
+  @L1: '';
+) {
+  .nick-name-title {
+    color: @T1;
+  }
+  .editNickNameLayer {
+    .nick-name-label {
+      color: @T1;
+    }
+    .nick-name-input {
+      .ant-input {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 12px;
+      }
+      .ant-input-suffix {
+        right: 12px;
+      }
+    }
+    .nick-name-icon-clear {
+      color: @T2;
+    }
+    .nick-name-length {
+      color: @T1;
+    }
+    .nick-name-split-line {
+      height: 16px;
+      border-left: 1px solid @L1;
+      margin: 0 12px;
+    }
+    .nick-name-tip {
+      color: @T2;
+    }
+  }
+}
+
+html[dir="rtl"] {
+  .editNickNameLayer .nick-name-input .ant-input-suffix {
+    right: 77% !important;
+  }
+}

@@ -1,0 +1,88 @@
+.center-hv,
+.center-vh {
+  &:extend(.d-flex, .align-items-center, .justify-content-center);
+}
+
+.center-v {
+  &:extend(.d-flex, .align-items-center);
+}
+
+.center-h {
+  &:extend(.d-flex, .justify-content-center);
+}
+
+.box-flex {
+  display: flex !important;
+  position: relative;
+}
+
+.box-fluid {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+  max-height: 100%;
+  // overflow: auto;
+}
+
+.box-auto {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+  max-height: none;
+}
+
+// fuild with & height
+.d-flex {
+  position: relative;
+
+  & > .box-fluid {
+    width: 0; // fix 高度溢出的问题
+  }
+
+  &.flex-column {
+    & > .box-fluid {
+      width: auto;
+      height: 0;
+    }
+  }
+}
+
+// fuild with & height
+.cols-fluid {
+  .box-fluid;
+  width: 0;
+}
+
+.stacks-fluid {
+  .box-fluid;
+  height: 0;
+}
+
+// fuild with & height
+.equal-cols {
+  & > * {
+    .box-fluid;
+    // width: 0;
+  }
+}
+
+.box-flex-h {
+  &:extend(.box-flex);
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: row !important;
+  flex-direction: row !important;
+}
+
+.box-flex-v {
+  &:extend(.box-flex);
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}

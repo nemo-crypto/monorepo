@@ -1,0 +1,40 @@
+// 不自动生成theme,
+// 默认：使用 antd的默认风格
+// 定制：如有需要，在自己的theme中，生成个性化的 dropdown
+.create-antd-select-drodown(@type: ''; @bg: ''; @fc: ''; ) {
+
+    // new  type: ant-select-dropdown-xx
+    .ant-select-dropdown.ant-select-dropdown-@{type} {
+        background: @bg;
+
+        .ant-select-dropdown-menu-item-selected:hover,
+        .ant-select-dropdown-menu-item-selected {
+            background: lighten(@bg, 5%);
+            color: @brand-primary  !important;
+            font-weight: bold;
+        }
+
+        .ant-select-dropdown-menu-item-active,
+        .ant-select-dropdown-menu-item-active:hover {
+            background: lighten(@bg, 2%);
+            color: @fc;
+        }
+
+        .ant-select-dropdown-menu-item {
+            color: @fc;
+
+            &:hover {
+                background: lighten(@bg, 2%);
+            }
+        }
+    }
+}
+
+
+.ant-select-dropdown-menu {
+    margin-top: 0px;
+}
+
+.ant-select-dropdown-menu-item {
+    line-height: 28px;
+}
