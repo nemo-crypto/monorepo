@@ -1,0 +1,11 @@
+node_modules
+dist
+package-lock.json
+**/**/lerna-debug.log
+yarn.lock
+.tgz
+.doc/
+.docz/
+doc
+.idea
+.DS_Store
