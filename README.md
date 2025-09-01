@@ -157,7 +157,7 @@ my-monorepo/
 ├── .eslintrc.js
 └── .prettierrc
 ```
-
+  
 ### 8. 示例包配置
 
 ```json:packages/ui/package.json
