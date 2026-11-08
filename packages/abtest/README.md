@@ -53,4 +53,16 @@ if (isNewFeatureEnabled) {
 
 ---
 
-如需更多帮助，请查阅源码或联系维护者。 
+如需更多帮助，请查阅源码或联系维护者。
+
+<!-- BEGIN chovy-readme-review -->
+## 源码接入与验证条件
+
+入口是index.js，导出initAbtest与getAbtest，依赖认证状态、业务策略接口和sessionStore。getAbtest当前使用data[key] || defaultValue：显式false会回落到默认值，默认值为true时需特别核实语义。
+
+[工作区说明](../../README.md)，包含当前Lerna发现范围、实际根命令与未完成配置。
+
+本模块没有独立的dev/build/test运行脚本；使用例子必须放在满足依赖的消费方中验证。文档中的npm安装写法只表示消费方式，本轮未确认公共或私有registry中的实际发布可用性。
+
+本轮核对包入口、导出与跨模块引用，未运行原业务接口、原生桥接或发布流程。
+<!-- END chovy-readme-review -->

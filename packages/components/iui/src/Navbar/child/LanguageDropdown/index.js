@@ -56,7 +56,7 @@ export default function (props) {
   const currencyRatesList = hooks.useModel('CURRENCY_RATES_LIST', 'items') || []
   const defaultCurrencyName = hooks.useModel('CURRENCY_RATES_CURRENT', 'value') || storage.getItem('CURRENCY_RATES_CURRENT') || 'USD'
   const onChangeCurrency = v => {
-    // storage存储用于和tapbit-main项目同步默认法币
+    // storage存储用于和demo-main项目同步默认法币
     storage.setItem('CURRENCY_RATES_CURRENT', v)
     actions.changeItem({ id: 'CURRENCY_RATES_CURRENT', value: v })
     setVisibleOverlay(false)

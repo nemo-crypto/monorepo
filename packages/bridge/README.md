@@ -74,4 +74,16 @@ registerApi('onCustomEvent', (err, data) => {
 - `BRIDGE_FUNCTION_NOTFOUND`：未找到指定的原生方法
 
 ## License
-ISC 
+ISC
+
+<!-- BEGIN chovy-readme-review -->
+## 源码接入与验证条件
+
+入口是lib/bridge.js，导出bridgeReady、callApi与registerApi。实现直接访问window/document，需要支持约定Bridge的iOS/Android WebView；普通Node进程或没有原生Bridge的浏览器不能据此证明桥接有效。
+
+[工作区说明](../../README.md)，包含当前Lerna发现范围、实际根命令与未完成配置。
+
+本模块没有独立的dev/build/test运行脚本；使用例子必须放在满足依赖的消费方中验证。文档中的npm安装写法只表示消费方式，本轮未确认公共或私有registry中的实际发布可用性。
+
+本轮核对包入口、导出与跨模块引用，未运行原业务接口、原生桥接或发布流程。
+<!-- END chovy-readme-review -->
