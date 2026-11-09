@@ -1,16 +1,42 @@
 {
+  "name": "learning-monorepo",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "author": "https://github.com/nemo-crypto",
-  "devDependencies": {
-    "lerna": "3.15.0"
+  "type": "module",
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=22"
   },
   "scripts": {
-    "versions": "lerna ls --long",
-    "diff": "git log --pretty=oneline --no-merges",
-    "i18n": "node --experimental-modules --loader ./build/custom-loader.mjs build/build-i18n.js"
+    "check:workspace": "node scripts/check-workspace.mjs",
+    "build": "pnpm run check:workspace && pnpm run clean && pnpm -r run build",
+    "typecheck": "pnpm run build && pnpm -r run typecheck",
+    "test": "pnpm run build && pnpm run test:built",
+    "check": "pnpm run build && pnpm -r run typecheck && pnpm run test:built",
+    "demo": "pnpm run build && pnpm --filter @demo/planner start && pnpm --filter @demo/report start",
+    "clean": "node scripts/clean.mjs",
+    "test:built": "tsc -p tests/tsconfig.json && node --test tests/*.test.mjs"
   },
-  "dependencies": {
-    "glob": "7.2.0"
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "^24.0.0",
+    "@demo/types": "workspace:*",
+    "@demo/utils": "workspace:*",
+    "@demo/learning": "workspace:*"
+  },
+  "description": "pnpm workspace + TypeScript monorepo tutorial with shared packages, dependency boundaries, topological builds and CI. 从零搭建多包仓库的架构教学 Demo。",
+  "keywords": [
+    "monorepo",
+    "pnpm",
+    "pnpm-workspace",
+    "typescript",
+    "workspace",
+    "software-architecture",
+    "github-actions",
+    "tutorial"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nemo-crypto/monorepo.git"
   }
 }
