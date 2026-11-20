@@ -20,7 +20,7 @@
 
 对比 apps/planner 与 apps/report：两个应用共享规则，但各自负责展示。构建后分别运行两个 start 命令。
 
-练习新建 apps/checklist，消费已有领域包输出未完成课程。为新应用声明 workspace 依赖和独立 tsconfig，补充实际进程输出测试。
+按[新增 CLI 应用步骤](architecture.md#新增一个命令行应用)新建 `apps/checklist`，消费共享课程数据并输出未完成课程。补充一项进程输出测试，验证新应用确实通过公共入口读取课程。
 
 ## 5. 验证架构约束
 

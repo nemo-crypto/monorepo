@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { resolve } from 'node:path';
+import { join, resolve } from 'node:path';
+import ts from 'typescript';
 import { checkSourceImports, validateSourceImports } from '../scripts/check-imports.mjs';
 import { validateWorkspaces } from '../scripts/check-workspace.mjs';
 import { loadWorkspaces } from '../scripts/workspaces.mjs';
@@ -44,7 +45,6 @@ test('拒绝重复包名、隐式注册表版本和非私有包', () => {
   assert.throws(() => validateWorkspaces([item]), /private/);
 });
 
-
 test('源码只能通过声明过的依赖和包内模块访问代码', () => {
   const sourceRoot = resolve('apps/planner/src');
   const file = resolve(sourceRoot, 'helpers/plan.ts');
@@ -59,4 +59,19 @@ test('源码只能通过声明过的依赖和包内模块访问代码', () => {
   assert.throws(() => validate("await import('@demo/learning/dist/study.js');"), /公共入口/);
   assert.throws(() => validate("export * from '../../../../packages/learning/src/study.js';"), /越过/);
   assert.throws(() => validate("import 'file:///example/study.js';"), /包内相对路径/);
+});
+
+test('共享包的有效 TypeScript 配置不继承平台全局类型', async () => {
+  for (const { group, path, manifest } of await loadWorkspaces()) {
+    if (group !== 'packages') continue;
+    const config = ts.getParsedCommandLineOfConfigFile(join(path, 'tsconfig.json'), {}, {
+      ...ts.sys,
+      onUnRecoverableConfigFileDiagnostic(diagnostic) {
+        throw new Error(ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'));
+      },
+    });
+    assert.deepEqual(config.errors, []);
+    assert.deepEqual(config.options.types, [], manifest.name);
+    assert.deepEqual(config.options.lib, ['lib.es2022.d.ts'], manifest.name);
+  }
 });

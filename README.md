@@ -47,7 +47,8 @@ monorepo/
 ├── .github/workflows/      # 与本地同命令的 CI
 ├── pnpm-workspace.yaml     # 工作区发现
 ├── pnpm-lock.yaml          # 固定外部依赖解析结果
-└── tsconfig.base.json      # 共享严格类型配置
+├── tsconfig.base.json      # 共享包使用的严格类型配置
+└── tsconfig.node.json      # CLI 应用启用 Node.js 类型
 ```
 
 每个工作区都有自己的 package.json、tsconfig.json 和构建产物。所有包都是 private；整个仓库不提供发布、自动提交或推送脚本。

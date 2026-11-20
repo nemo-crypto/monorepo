@@ -23,7 +23,14 @@ flowchart TD
 | 类型包 | Lesson 与 StudySummary | 只描述数据契约 |
 | 根工程 | 配置、构建入口、测试与 CI | 工程依赖集中声明，不代替包的依赖声明 |
 
-TypeScript 配置由根 tsconfig.base.json 共享，包内配置只声明源码与产物目录。单份配置不单独创建发布包，减少不必要层级。
+## TypeScript 平台边界
+
+| 配置 | 使用者 | 可用的环境类型 |
+| --- | --- | --- |
+| `tsconfig.base.json` | 共享包、消费方类型测试 | ES2022 标准库 |
+| `tsconfig.node.json` | Node.js CLI 应用 | ES2022 标准库和 Node.js 类型 |
+
+各工作区在自己的 `tsconfig.json` 里声明 `src` 和 `dist`，再按运行环境选择要继承的配置。共享包使用的基础配置显式设置 `types: []`，即使根目录安装了 `@types/node`，直接使用 `process` 等 Node 全局变量也会收到类型错误。文件读写、环境变量和终端输出由 CLI 层处理。新增浏览器应用时，可以继承基础配置并在应用内加入 DOM 类型。
 
 ## 工作区与公共入口
 
@@ -75,3 +82,17 @@ CI 使用 Node 24，pnpm 版本由 packageManager 固定。dist、node_modules �
 ## 扩展原则
 
 先在合适层级增加功能，再声明依赖、导出 API、添加消费测试与文档。只有出现第二个真实消费方时才提取新的共享包。需要浏览器界面时新增 apps/web；需要远程数据时由应用适配接口，不把请求和密钥写进通用工具包。
+
+### 新增一个命令行应用
+
+1. 新建 `apps/<name>/package.json`。参考 [planner 的清单](../apps/planner/package.json)，将名称换为 `@demo/<name>`，保留 `private: true`、ESM 设置及 `build`、`typecheck` 和 `start` 命令。把源码实际用到的内部依赖列在 `dependencies`，版本使用 `workspace:*`。
+2. 参考 [planner 的 TypeScript 配置](../apps/planner/tsconfig.json) 创建本包的 `tsconfig.json`。从 `src/index.ts` 开始，使用 `@demo/learning` 等公共入口，应用内处理输入与输出。
+3. 从根目录执行 `pnpm install` 更新工作区链接和锁文件。用下列命令先验证新应用，再运行全仓库检查。
+
+```sh
+pnpm --filter '@demo/checklist...' run build
+pnpm --filter @demo/checklist start
+pnpm run check
+```
+
+将示例中的 `checklist` 换成实际包名。全仓库检查会自动发现新工作区。若需要覆盖新应用的输出，就在 `tests/apps.test.mjs` 增加一个进程测试。提交时包含更新后的 `pnpm-lock.yaml`。
