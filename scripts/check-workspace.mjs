@@ -1,10 +1,14 @@
 import { pathToFileURL } from 'node:url';
+import { checkSourceImports } from './check-imports.mjs';
 import { loadWorkspaces } from './workspaces.mjs';
+
+const dependencySections = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
 
 export function validateWorkspaces(workspaces) {
   const byName = new Map();
   for (const workspace of workspaces) {
-    const { manifest } = workspace;
+    const { group, manifest } = workspace;
+    if (group !== 'apps' && group !== 'packages') throw new Error(`未知工作区层级: ${group}`);
     if (!manifest.name?.startsWith('@demo/') || byName.has(manifest.name)) {
       throw new Error(`包名无效或重复: ${manifest.name}`);
     }
@@ -16,15 +20,14 @@ export function validateWorkspaces(workspaces) {
   }
 
   const graph = new Map();
-  for (const { group, manifest } of workspaces) {
+  for (const { manifest } of workspaces) {
     const edges = new Set();
-    for (const section of ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies']) {
+    for (const section of dependencySections) {
       for (const [name, version] of Object.entries(manifest[section] ?? {})) {
         if (!name.startsWith('@demo/') && !version.startsWith('workspace:')) continue;
         const target = byName.get(name);
         if (!target || version !== 'workspace:*') throw new Error(`工作区依赖无效: ${manifest.name} -> ${name}`);
         if (target.group === 'apps') throw new Error(`禁止依赖应用: ${manifest.name} -> ${name}`);
-        if (group !== 'apps' && group !== 'packages') throw new Error(`未知工作区层级: ${group}`);
         edges.add(name);
       }
     }
@@ -42,10 +45,12 @@ export function validateWorkspaces(workspaces) {
     visited.add(name);
   }
   for (const name of graph.keys()) visit(name);
+  return graph;
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const workspaces = await loadWorkspaces();
-  validateWorkspaces(workspaces);
-  console.log(`工作区检查通过：${workspaces.length} 个包，依赖声明与分层方向有效。`);
+  const graph = validateWorkspaces(workspaces);
+  await checkSourceImports(workspaces, graph);
+  console.log(`工作区检查通过：${workspaces.length} 个包，依赖声明、分层方向与源码导入有效。`);
 }

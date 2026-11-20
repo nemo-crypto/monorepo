@@ -25,7 +25,7 @@ nvm use
 # 尚未安装 pnpm 时，可执行：npm install -g pnpm@10.32.0
 pnpm install --frozen-lockfile
 pnpm run check
-pnpm run demo
+pnpm run demo:built
 ```
 
 两个 Demo 均为命令行应用，不需要浏览器或后端：学习计划将四节课分为两天；进度报告展示完成 2/4 节课程、45/100 分钟、45.0% 课时进度。
@@ -41,7 +41,7 @@ monorepo/
 │   ├── types/              # Lesson / StudySummary 数据契约
 │   ├── utils/              # 分组与百分比等纯函数
 │   └── learning/           # 教学数据与课程规则
-├── scripts/                # 工作区边界检查、构建目录清理
+├── scripts/                # 依赖声明与源码导入检查、构建目录清理
 ├── tests/                  # 公开 API、类型、应用集成和依赖边界测试
 ├── docs/                   # 架构、教学路线和替换范围
 ├── .github/workflows/      # 与本地同命令的 CI
@@ -56,24 +56,23 @@ monorepo/
 
 | 命令 | 行为 |
 | --- | --- |
-| `pnpm run check:workspace` | 校验包名、private、内部依赖声明、循环依赖及分层方向 |
+| `pnpm run check:workspace` | 校验依赖图、公共入口和源码导入边界 |
 | `pnpm run build` | 检查工作区、清理 dist，按依赖拓扑构建全部包 |
 | `pnpm run typecheck` | 先构建依赖声明，再检查各包类型 |
 | `pnpm test` | 构建后运行消费方类型测试和自动化测试 |
 | `pnpm run check` | 完整构建、各包类型检查和测试 |
-| `pnpm run demo` | 构建后运行两个应用 |
+| `pnpm run demo` | 从源码构建并运行两个应用 |
+| `pnpm run demo:built` | 运行已有的构建产物，适合刚跑完 `check` 或在 CI 里使用 |
 | `pnpm run clean` | 仅清理各工作区的 dist |
 
-构建后可单独执行：
+已经跑过 `pnpm run check` 时，可以直接用 `pnpm run demo:built`。开发单个应用时，可以构建它及其依赖，再启动它。
 
 ```sh
-pnpm --filter @demo/planner start
-pnpm --filter @demo/report start
-# ... 表示包含该应用所依赖的工作区包
 pnpm --filter '@demo/report...' run build
+pnpm --filter @demo/report start
 ```
 
-根目录通过 devDependencies 显式声明测试所消费的 workspace 包；应用则在各自的 dependencies 中声明运行时依赖。不要依靠偶然提升到根目录的包。
+根目录在 `devDependencies` 声明测试需要的工作区包。应用在自己的 `dependencies` 声明运行时依赖，并通过包名导入，例如 `@demo/learning`。
 
 ## 推荐阅读
 

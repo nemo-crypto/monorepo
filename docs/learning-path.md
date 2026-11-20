@@ -20,13 +20,13 @@
 
 对比 apps/planner 与 apps/report：两个应用共享规则，但各自负责展示。构建后分别运行两个 start 命令。
 
-练习新建 apps/checklist，消费已有领域包输出未完成课程。为新应用声明 workspace 依赖和独立 tsconfig，补充实际进程输出测试。现有工作区数量断言也应随新增应用更新。
+练习新建 apps/checklist，消费已有领域包输出未完成课程。为新应用声明 workspace 依赖和独立 tsconfig，补充实际进程输出测试。
 
 ## 5. 验证架构约束
 
-阅读 scripts/check-workspace.mjs 与 tests/workspaces.test.mjs。在临时修改中构造 packages/utils 对 apps/report 的反向依赖，运行 check:workspace 应失败；撤回后恢复通过。
+阅读 `scripts/check-workspace.mjs`、`scripts/check-imports.mjs` 和 `tests/workspaces.test.mjs`。在临时分支尝试给 `packages/utils` 声明对 `apps/report` 的依赖，再单独尝试从其他包的 `src` 相对导入文件。两种修改都应使 `pnpm run check:workspace` 失败。撤回练习改动后再验证。
 
-执行 `pnpm run clean && pnpm run check && pnpm run demo`，确认首次构建不依赖旧产物。最后阅读 CI，对照每个远程步骤的本地命令。
+执行 `pnpm run check && pnpm run demo:built`，确认从干净构建到示例运行的流程。最后阅读 CI，对照每个远程步骤的本地命令。
 
 ## 通关标准
 

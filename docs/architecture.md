@@ -31,7 +31,17 @@ pnpm-workspace.yaml 只发现 `apps/*` 和 `packages/*`。内部依赖写成 `wo
 
 根测试工程本身也是消费方，因此在根 devDependencies 中声明三个本地包。这些包不存在于公共 npm 注册表，也不需要发布。
 
-工作区检查器检查 package.json 声明的依赖图，发现缺失包、重复包名、错误 workspace 协议、循环依赖和依赖应用的边。它不是源码级 import 检查器；跨目录相对导入还需要代码审查，必要时再引入 ESLint 边界规则。
+`pnpm run check:workspace` 先验证各包 `package.json` 中的依赖图，再扫描各包 `src/**/*.ts` 中可静态识别的导入。普通导入、类型导入、重新导出和字符串字面量动态导入都经过同一套检查。
+
+| 写法 | 约束 |
+| --- | --- |
+| `import { createStudyPlan } from '@demo/learning'` | 当前包必须显式声明 `@demo/learning` |
+| `import('./study.js')` | 相对路径必须留在当前包的 `src` 内 |
+| `import '@demo/learning/dist/study.js'` | 深层导入会被拒绝，公共 API 统一经包名访问 |
+
+例如，`@demo/learning` 的 `src/index.ts` 提供公共入口，`catalog.ts` 保存示例课程，`study.ts` 实现学习计划和进度规则。包内用相对路径组织实现，调用方只需要知道包入口。
+
+检查器根据清单确认直接依赖，并拦截源码中的上述导入方式。计算出来的动态路径需要通过代码审查和运行测试验证。第三方依赖仍由 pnpm 安装、TypeScript 解析和运行测试检查。
 
 ## 构建链路
 
@@ -42,7 +52,7 @@ pnpm-workspace.yaml 只发现 `apps/*` 和 `packages/*`。内部依赖写成 `wo
           └──────────────────┘
 ```
 
-执行 `pnpm -r run build` 时按包依赖拓扑排序，同一层可并行。领域包导出的声明会引用共享类型包，所以类型依赖也必须显式声明。
+执行 `pnpm -r run build` 时，pnpm 根据包依赖排序，同一层可并行。领域包导出的声明会引用共享类型包，所以类型依赖也必须显式声明。只开发报告应用时，可用 `pnpm --filter '@demo/report...' run build` 构建报告及其依赖。这个命令适合迭代。要清除历史产物并验证全仓库，用 `pnpm run check`。
 
 每个包使用 tsc 输出 ESM、声明文件和 source map。根 build 先清理所有 dist，避免已经删除的源码残留为旧产物。类型检查也先构建，确保消费者能够解析依赖包的声明。当前规模不需要 Turborepo；未来构建缓存确有收益时再添加。
 
@@ -58,9 +68,9 @@ NodeNext 使用真实 Node ESM 规则。需要新增包内相对 import 时，�
 
 ## 质量与交付
 
-本地和 CI 都执行冻结锁文件安装、check、demo。测试覆盖领域边界、工作区依赖规则、生成声明的消费契约和真实应用进程输出。没有虚假的成功占位脚本。
+CI 依次执行冻结锁文件安装、`pnpm run check` 和 `pnpm run demo:built`。最后一步复用检查阶段生成的 `dist`。本地从干净目录运行示例时用 `pnpm run demo`。测试覆盖领域边界、依赖图、源码导入限制、公共类型声明和两个应用的进程输出。
 
-CI 使用 Node 24，pnpm 版本由 packageManager 固定。dist、node_modules 和环境文件不进入源码。全部 workspace 包保持 private，避免误发布。CI 文件已提供，但远程 Actions 的执行结果需推送后另行确认。
+CI 使用 Node 24，pnpm 版本由 packageManager 固定。dist、node_modules 和环境文件不进入源码。全部 workspace 包保持 private，避免误发布。
 
 ## 扩展原则
 

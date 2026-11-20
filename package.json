@@ -13,7 +13,8 @@
     "typecheck": "pnpm run build && pnpm -r run typecheck",
     "test": "pnpm run build && pnpm run test:built",
     "check": "pnpm run build && pnpm -r run typecheck && pnpm run test:built",
-    "demo": "pnpm run build && pnpm --filter @demo/planner start && pnpm --filter @demo/report start",
+    "demo": "pnpm run build && pnpm run demo:built",
+    "demo:built": "pnpm --filter @demo/planner start && pnpm --filter @demo/report start",
     "clean": "node scripts/clean.mjs",
     "test:built": "tsc -p tests/tsconfig.json && node --test tests/*.test.mjs"
   },
